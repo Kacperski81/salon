@@ -30,12 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="m-4 pointer-events-none fixed inset-0 z-50 border-4 border-[#333333]"></div>
         <div className="flex flex-col min-h-screen max-w-screen mx-auto bg-white text-sm">
-          <Header />
-          <HeroSection />
           {children}
-          <Footer />
         </div>
+        <Footer />
       </body>
     </html>
   );
