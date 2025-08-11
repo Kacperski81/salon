@@ -11,7 +11,7 @@ export default function HeroSection() {
                 <h1 className="grow-1 font-(family-name:--font-aboreto) text-6xl flex flex-col pt-10 xl:justify-center items-center px-4 xl:px-16">
                     <span>FEEL GOOD, </span>
                     <span>LOOK AMAZING.</span>
-                    <span className="mt-4 font-normal text-lg">Step into a world of beauty and relaxation. We&apos;re here to make you shine</span>
+                    <span className="mt-4 font-normal text-lg">Step into a world of beauty and relaxation. We@#39;re here to make you shine</span>
                 </h1>
                 <div className="bg-[#000] relative grow-3">
                     <Image
