@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Aboreto } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
-import HeroSection from "@/components/heroSection";
+import Hamburger from "@/components/hamburger";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const aboreto = Aboreto({
+  variable: "--font-aboreto",
+  subsets: ['latin'],
+  weight: '400'
+})
 
 export const metadata: Metadata = {
   title: "InfinityMK Hair, Nails & Beauty Salon | Putney & Wandsworth, London",
@@ -28,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${aboreto.variable} antialiased`}
       >
-        <div className="m-4 pointer-events-none fixed inset-0 z-50 border-4 border-[#333333]"></div>
+        <div className="m-7 pointer-events-none fixed inset-0 z-50 xl:border-4 xl:border-[#333333]">
+          <Hamburger />
+        </div>
         <div className="flex flex-col min-h-screen max-w-screen mx-auto bg-white text-sm">
           {children}
         </div>
