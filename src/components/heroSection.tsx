@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ImageSrc from "../../public/main_hero3.webp";
 
-
 export default function HeroSection() {
     return (
         <div className="h-screen flex flex-col">
