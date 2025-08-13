@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Aboreto } from "next/font/google";
+import { Aboreto, Lato } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Hamburger from "@/components/hamburger";
@@ -8,6 +8,12 @@ const aboreto = Aboreto({
   variable: "--font-aboreto",
   subsets: ['latin'],
   weight: '400'
+})
+
+const lato = Lato({
+  variable: "--font-lato",
+  subsets: ['latin'],
+  weight: '300'
 })
 
 export const metadata: Metadata = {
@@ -23,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${aboreto.variable} antialiased`}
+        className={`${aboreto.variable} ${lato.variable} antialiased`}
       >
         <div className="m-7 pointer-events-none fixed inset-0 z-50 xl:border-4 xl:border-[#333333]">
           <Hamburger />

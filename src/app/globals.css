@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
 :root {
-    --bg-color: #F2E7CB
+    --bg-color: #F2E7CB;
+    --text-color: #333333;
+    --dusty-rose: #C8A2C8;
+    --sage-green: #B2BEB5;
+    --soft-lavender: #E6E6FA;
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    /* border-radius: 1rem; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-image: fill 0 linear-gradient(to bottom, rgba(230, 230, 250, 0.1) 50%, rgba(51, 51, 51, 0.9) 100%);
+    overflow: hidden;
+    background-position-x: center;
+}
+
+.card-hair {
+    background-image: url("../../public/hair_card.jpg");
+}
+
+.card-nail {
+    background-image: url("../../public/card_nails.jpg");
 }
