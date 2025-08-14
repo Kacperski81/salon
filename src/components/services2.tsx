@@ -35,7 +35,7 @@ export default function Services2() {
             Our Services
           </h2>
           <p className="text-base sm:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: "#8B7355" }}>
-            From a simple cut to a full makeover, we've got you covered.
+            {`From a simple cut to a full makeover, we've got you covered.`}
           </p>
         </div>
 
