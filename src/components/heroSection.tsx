@@ -3,7 +3,7 @@ import ImageSrc from "../../public/main_hero3.webp";
 
 export default function HeroSection() {
     return (
-        <div className="h-screen flex flex-col">
+        <div className="h-screen flex flex-col bg-[var(--bg-secondary)]">
             {/* rgb(242, 231, 203) */}
             <div className="flex flex-col-reverse xl:grid xl:grid-cols-2 grow">
                 

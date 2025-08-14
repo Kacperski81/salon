@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-[var(--bg-color)]">
+        <footer className="bg-[var(--bg-color)] pt-10">
             {/* container */}
             <div className="container mx-auto px-4 sm:-px-6 lg:px-8 md:py-16 ">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
