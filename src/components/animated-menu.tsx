@@ -1,6 +1,6 @@
 "use client"
 
-import { Linefont } from "next/font/google"
+// import { Linefont } from "next/font/google"
 import Link from "next/link"
 import { useState } from "react"
 
