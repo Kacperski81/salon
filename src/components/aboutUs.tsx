@@ -5,7 +5,7 @@ import { MapPin } from "lucide-react";
 
 export default function AboutUs() {
     return (
-        <section className="grid justify-items-center gap-6 xl:grid-cols-2 xl:gap-16 min-h-screen">
+        <section className="bg-[var(--bg-color)] grid justify-items-center gap-6 xl:grid-cols-2 xl:gap-16 min-h-screen">
             <div className="relative md:w-4/5 aspect-[4/3] xl:justify-self-end xl:self-center shadow-2xl">
                 <Image
                     src={ImageSrc}

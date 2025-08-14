@@ -17,7 +17,7 @@ export default function AnimatedMenu() {
       <button
         onClick={toggleMenu}
         className={`
-          fixed z-50 bg-[var(--bg-color)] border border-[#B8860B] 
+          fixed z-50 bg-transparent border border-[#B8860B] 
           transition-all duration-300 flex items-center justify-center group
           
           /* Mobile: Square button in top-left corner */
