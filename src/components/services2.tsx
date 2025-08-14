@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Scissors, Sparkles } from "lucide-react"
 import Image from "next/image";
+import Link from "next/link";
 import ImageHairSrc from "../../public/zd2.jpg";
 import ImageNailSrc from "../../public/card_nails.jpg";
 
@@ -16,6 +17,7 @@ export default function Services2() {
       description: "Precision cuts, vibrant colors, and nourishing treatments to bring out the best in your hair.",
       image: ImageHairSrc,
       icon: <Scissors className="h-6 w-6" />,
+      link: "/hair",
     },
     nails: {
       title: "Nail Services",
@@ -23,6 +25,7 @@ export default function Services2() {
       description: "Manicures, pedicures, and artistic nail designs for perfectly polished hands and feet.",
       image: ImageNailSrc,
       icon: <Sparkles className="h-6 w-6" />,
+      link: "/nails"
     },
   }
 
@@ -73,23 +76,23 @@ export default function Services2() {
               <div className="font-(family-name:--font-lato) flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                 {/* Left side - Text content */}
                 <div className="flex-1 text-center lg:text-left">
-                  <h2 className="font-(family-name:--font-aboreto) text-2xl sm:text-3xl lg:text-4xl font-light mb-6" style={{ color: "#333333" }}>
+                  <h2 className="font-(family-name:--font-aboreto) text-2xl sm:text-3xl lg:text-4xl mb-6" style={{ color: "#333333" }}>
                     {service.heading}
                   </h2>
-                  <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: "#8B7355" }}>
+                  <p className="text-base sm:text-lg leading-relaxed mb-8 text-[var(--text-color)]">
                     {service.description}
                   </p>
-                  <a
-                    href="#"
+                  <Link
+                    href={service.link}
                     className="inline-block px-6 py-3 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
                     style={{ backgroundColor: "#B8860B" }}
                   >
                     Learn More
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Right side - Image */}
-                <div className="relative flex-1 w-full h-64 sm:h-80 lg:h-96">
+                <div className="relative flex-1 w-full h-64 sm:h-80 lg:h-120">
                   <Image
                     src={service.image}
                     alt={service.heading}

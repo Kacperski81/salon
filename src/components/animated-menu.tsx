@@ -1,14 +1,25 @@
 "use client"
 
-// import { Linefont } from "next/font/google"
-import Link from "next/link"
-import { useState } from "react"
+import Link from "next/link";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+
 
 export default function AnimatedMenu() {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
+  }
+
+  const handleLinkClick = () => {
+    setIsOpen(false)
+  }
+
+  const isLinkActive = (href: string) => {
+    const pathname = usePathname();
+    console.log(pathname);
+    return pathname == href
   }
 
   return (
@@ -70,25 +81,37 @@ export default function AnimatedMenu() {
             <nav className="space-y-6">
               <Link
                 href="/"
-                className="block text-2xl font-playfair text-[#333333] hover:text-[#B8860B] transition-colors duration-300"
+                onClick={handleLinkClick}
+                className={`block text-2xl font-playfair transition-colors duration-300 ${
+                  isLinkActive("/") ? "text-[#B8860B] font-semibold" : "text-[#333333] hover:text-[#B8860B]"
+                }`}
               >
                 Home
               </Link>
               <Link
                 href="/hair"
-                className="block text-2xl font-playfair text-[#333333] hover:text-[#B8860B] transition-colors duration-300"
+                onClick={handleLinkClick}
+                className={`block text-2xl font-playfair transition-colors duration-300 ${
+                  isLinkActive("/hair") ? "text-[#B8860B] font-semibold" : "text-[#333333] hover:text-[#B8860B]"
+                }`}
               >
                 Hair
               </Link>
               <Link
                 href="/nails"
-                className="block text-2xl font-playfair text-[#333333] hover:text-[#B8860B] transition-colors duration-300"
+                onClick={handleLinkClick}
+                className={`block text-2xl font-playfair transition-colors duration-300 ${
+                  isLinkActive("/nails") ? "text-[#B8860B] font-semibold" : "text-[#333333] hover:text-[#B8860B]"
+                }`}
               >
                 Nails
               </Link>
               <Link
                 href="/beauty"
-                className="block text-2xl font-playfair text-[#333333] hover:text-[#B8860B] transition-colors duration-300"
+                onClick={handleLinkClick}
+                className={`block text-2xl font-playfair transition-colors duration-300 ${
+                  isLinkActive("/beauty") ? "text-[#B8860B] font-semibold" : "text-[#333333] hover:text-[#B8860B]"
+                }`}
               >
                 Beauty
               </Link>
