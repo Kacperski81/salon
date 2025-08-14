@@ -1,12 +1,13 @@
 "use client"
 
 import Link from "next/link";
-import { useState } from "react";
+import { use, useState } from "react";
 import { usePathname } from "next/navigation";
 
 
 export default function AnimatedMenu() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -17,8 +18,6 @@ export default function AnimatedMenu() {
   }
 
   const isLinkActive = (href: string) => {
-    const pathname = usePathname();
-    console.log(pathname);
     return pathname == href
   }
 
