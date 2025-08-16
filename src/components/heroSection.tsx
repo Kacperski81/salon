@@ -1,9 +1,9 @@
 import Image from "next/image";
-import ImageSrc from "../../public/main_hero3.webp";
+import ImageSrc from "../../public/main_hero_light.jpg";
 
 export default function HeroSection() {
     return (
-        <div className="h-screen flex flex-col bg-[var(--bg-secondary)]">
+        <div className="h-screen flex flex-col">
             {/* rgb(242, 231, 203) */}
             <div className="flex flex-col-reverse xl:grid xl:grid-cols-2 grow">
                 

@@ -2,6 +2,7 @@ import AboutUs from "@/components/aboutUs";
 import HeroSection from "@/components/heroSection";
 // import Services from "@/components/services";
 import Services2 from "@/components/services2";
+// import Services3 from "@/components/services3";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <AboutUs />
       {/* <Services /> */}
       <Services2 />
+      {/* <Services3 /> */}
     </div>
   );
 }

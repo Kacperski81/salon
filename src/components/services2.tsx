@@ -30,7 +30,7 @@ export default function Services2() {
     }
 
     return (
-        <section className="py-12 md:py-20 bg-[var(--bg-secondary)] min-h-screen">
+        <section className="py-12 md:py-20 min-h-screen">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="font-(family-name:--font-lato) text-center mb-12 md:mb-16">
