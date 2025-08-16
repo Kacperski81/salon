@@ -59,7 +59,7 @@ export default function Services2() {
                                         activeTab === key
                                             ? "0 8px 25px rgba(184, 134, 11, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)"
                                             : "none",
-                                    focusRingColor: "#B8860B",
+                                    // focusRingColor: "#B8860B",
                                 }}
                                 onMouseEnter={(e) => {
                                     if (activeTab !== key) {
