@@ -1,3 +1,5 @@
+"use client"
+
 import AboutUs from "@/components/aboutUs";
 import HeroSection from "@/components/heroSection";
 // import Services from "@/components/services";
