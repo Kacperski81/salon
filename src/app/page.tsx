@@ -3,6 +3,7 @@ import HeroSection from "@/components/heroSection";
 // import Services from "@/components/services";
 import Services2 from "@/components/services2";
 // import Services3 from "@/components/services3";
+// import Services4 from "@/components/services4"
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       {/* <Services /> */}
       <Services2 />
       {/* <Services3 /> */}
+      {/* <Services4 /> */}
     </div>
   );
 }
