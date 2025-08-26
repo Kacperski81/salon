@@ -13,7 +13,7 @@ export default function Footer() {
 
 
     return (
-        <footer className="bg-[#333333] min-h-screen py-2 flex items-center">
+        <footer id="footer" className="sticky top-0 bg-[#333333] min-h-screen py-2 flex items-center z-40">
             {/* container */}
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:py-16 w-full">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

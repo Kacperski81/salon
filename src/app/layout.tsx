@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Aboreto, Lato } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/footer";
+// import Footer from "@/components/footer";
 // import Hamburger from "@/components/hamburger";
 import AnimatedMenu from "@/components/animated-menu";
 import FloralBorder from "@/components/border";
@@ -139,7 +139,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen max-w-screen mx-auto bg-white text-sm">
           {children}
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
