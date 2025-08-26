@@ -31,10 +31,10 @@ export default function AnimatedMenu() {
           transition-all duration-300 flex items-center justify-center group
           
           /* Mobile: Square button in top-left corner */
-          top-10 right-4 w-12 h-12 rounded-lg
+          top-10 right-2 w-12 h-12 rounded-lg
           
           /* Tablet: Full height vertical bar on left side */
-          md:top-10 md:right-4 z-100 md:w-16 md:h-16
+          md:top-10 md:right-2 z-100 md:w-16 md:h-16
 
           /* Desktop */
           xl:top-1/2 xl:-translate-y-1/2 lg:left-1
@@ -71,7 +71,7 @@ export default function AnimatedMenu() {
             }`}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="p-8 pl-20 pt-10 md:pt-20 xl:pl-20">
+          <div className="p-8 pt-10 md:pt-20 xl:pl-20">
             <nav className="space-y-6">
               <Link
                 href="/"
