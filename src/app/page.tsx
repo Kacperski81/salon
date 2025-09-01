@@ -3,8 +3,9 @@
 import AboutUs from "@/components/aboutUs";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/heroSection";
+import Services5 from "@/components/services5";
 // import Services from "@/components/services";
-import Services2 from "@/components/services2";
+// import Services2 from "@/components/services2";
 // import Services3 from "@/components/services3";
 // import Services4 from "@/components/services4"
 import { useState, useEffect } from "react";
@@ -13,9 +14,9 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
+
     const handleScroll = () => {
       const sections = ["hero", "about", "services", "footer"];
-
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -23,20 +24,19 @@ export default function Home() {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
-
           if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
             setActiveSection(section);
             break;
           }
-
-
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
+
+    // 6. Cleanup: remove both listeners when the component unmounts.
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [])
 
   return (
@@ -44,9 +44,10 @@ export default function Home() {
       <HeroSection />
       <AboutUs />
       {/* <Services /> */}
-      <Services2 />
+      {/* <Services2 /> */}
       {/* <Services3 /> */}
       {/* <Services4 /> */}
+      <Services5 />
       <Footer />
     </div>
   );
