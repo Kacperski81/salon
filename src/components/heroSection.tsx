@@ -17,6 +17,7 @@ export default function HeroSection() {
                         src={ImageSrc}
                         alt="Salon hero image"
                         fill
+                        sizes="100vw"
                         style={{ objectFit: "cover" }}
                     />
                 </div>
