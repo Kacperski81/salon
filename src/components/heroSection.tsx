@@ -8,16 +8,18 @@ export default function HeroSection() {
             <div className="flex flex-col-reverse xl:grid xl:grid-cols-2 grow">
                 
                 <h1 className="leading-[1.3] grow-1 font-(family-name:--font-aboreto) text-3xl lg:text-6xl flex flex-col pt-10 xl:justify-center items-center px-4 xl:px-16">
-                    <span>FEEL GOOD, </span>
-                    <span>LOOK AMAZING.</span>
-                    <span className="mt-4 font-normal text-lg">{`Step into a world of beauty and relaxation. We're here to make you shine.`}</span>
+                    <span className="text-(--main-800 font-bold">FEEL GOOD, </span>
+                    <span className="text-(--primary-800) font-bold">LOOK AMAZING.</span>
+                    <span className="mt-4 font-normal text-lg text-(--main-700)">{`Step into a world of beauty and relaxation. We're here to make you shine.`}</span>
                 </h1>
-                <div className="bg-[#000] relative grow-3 shadow-xl">
+                <div className="relative grow-3 shadow-xl">
                     <Image
                         src={ImageSrc}
                         alt="Salon hero image"
                         fill
                         sizes="100vw"
+                        priority
+                        placeholder="blur"
                         style={{ objectFit: "cover" }}
                     />
                 </div>

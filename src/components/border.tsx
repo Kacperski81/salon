@@ -24,7 +24,7 @@ import type React from "react"
 
 export default function FloralBorder() {
   return (
-    <div className="m-3 hidden xl:block fixed inset-0 pointer-events-none z-50">
+    <div className="m-3 hidden xl:block fixed inset-0 pointer-events-none z-60">
       {/* Top border with stem */}
       <div className="absolute top-0 left-0 right-0 bottom-0 h-8">
         <svg className="w-full h-full" viewBox="0 0 1200 32" preserveAspectRatio="none">

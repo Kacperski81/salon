@@ -7,7 +7,6 @@ import nailsBg from "../../public/card_nails.jpg";
 import beautyBg from "../../public/zd1.jpg";
 import productsBg from "../../public/card_hair_background.jpg";
 import { ScissorsSVG } from "./svgs";
-import { ServerResponse } from "http";
 
 interface ServiceData {
     id: string
@@ -80,39 +79,41 @@ export default function Services5() {
     }
 
     return (
-        <section id="services" className="bg-(--bg-color) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
-            <div className="grow flex flex-col">
-                <h2 className="text-white">Our Services</h2>
-
+        <section id="services" className="bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
+            <div className="grow flex flex-col lg:justify-center gap-3">
+                <h2 className="font-(family-name:--font-aboreto) text-3xl sm:text-4xl lg:text-5xl font-light">Our Services</h2>
+                <p className="leading-relaxed text-base sm:text-lg md:text-xl text-(--main-700)">
+                    {`From a simple cut to a full makeover, we've got you covered.`}
+                </p>
                 {/* Wrapper */}
-                <div className="grow p-2 flex">
+                <div className="grow p-2 flex justify-center">
 
                     {/* Accordion */}
-                    <div className="bg-(--bg-color) grow flex flex-col md:flex-row gap-(--panels-gap)">
+                    <div className="bg-(--bg-color) grow flex flex-col lg: justify-center md:flex-row gap-(--panels-gap) lg:max-w-7xl">
 
                         {serviceData.map((service) => {
                             return (
                                 // Accordion panel
-                                <div key={service.id} onClick={() => togglePanel(service.id)} 
-                                className={`relative isolate p-(--panel-padding) overflow-hidden panel-radius ${expandedPanel === service.id ? "opened-panel" : "closed-panel"}`}>
+                                <div key={service.id} onClick={() => togglePanel(service.id)}
+                                    className={`relative isolate p-(--panel-padding) overflow-hidden panel-radius flex flex-col ${expandedPanel === service.id ? "opened-panel" : "closed-panel"}`}>
                                     {/* Accordion heading */}
-                                    <h3 id={`${service.id}-heading`}>
+                                    <h3 id={`${service.id}-heading`} className="">
 
                                         {/* Accordion trigger */}
-                                        <button aria-controls={`${service.id}-content`} aria-expanded={service.id === expandedPanel} 
-                                        className="bg-transparent flex items-center flex-row-reverse gap-(--panel-gap)">
+                                        <button aria-controls={`${service.id}-content`} aria-expanded={service.id === expandedPanel}
+                                            className="bg-transparent flex items-center flex-row-reverse gap-(--panel-gap)">
 
                                             {/* Panel 1 title */}
-                                            <span className="text-white text-2xl font-bold">{service.name}</span>
+                                            <span className="text-white text-sm lg:text-2xl font-bold">{service.name}</span>
                                             {/* Accordion icon */}
-                                            <svg className="bg-(--accordion-button) w-(--button-size) p-1 rounded-full aspect-square">{service.services[0].icon}</svg>
+                                            <div className="bg-(--accordion-button) w-(--button-small) lg:w-(--button-size) p-1 rounded-full aspect-square">{service.services[0].icon}</div>
 
                                         </button>
                                     </h3>
 
                                     {/* Accordion content * Panel 1 content */}
                                     <div id={`${service.id}-content`} aria-labelledby={`${service.id}-heading}`} role="region" aria-hidden={service.id !== expandedPanel} className="relative z-10">
-                                        <p className={`panel-paragraph text-left relative text-white opacity-0 ${expandedPanel === service.id ? "opacity-100 transition-opacity duration-500 delay-500 translate-y-0 transition-transform duration-500 delay-500" : "opacity-0 transition-opacity duration-500 delay-500 translate-y-2 transition-transform duration-500 delay-500"}`}>{service.services[0].description}</p>
+                                        <p className={`panel-paragraph text-left relative text-white opacity-0 ${expandedPanel === service.id ? "opacity-100 transition-opacity duration-500 delay-500 translate-y-0 transition-transform duration-500 delay-500" : "opacity-0 transition-opacity duration-500 delay-500 translate-y-2 transition-transform duration-500 delay-500"}`}>{service.services[0].description}<span className="block text-right w-full">see more</span></p>
                                     </div>
                                     <Image
                                         src={service.image}
@@ -121,7 +122,7 @@ export default function Services5() {
                                         sizes="100vw"
                                         objectFit="cover"
                                         className={`-z-1 ${expandedPanel === service.id ? "image-brightness" : "image-brightness-light"}`}
-                                        
+
                                     />
                                 </div>
                             )

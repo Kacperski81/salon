@@ -8,18 +8,64 @@
     --dusty-rose: #C8A2C8;
     --sage-green: #B2BEB5;
     --soft-lavender: #E6E6FA;
-    --pink-button: #C8A2C8; 
+    --pink-button: #C8A2C8;
     --gold: #8B7355;
+
+
+    /* HSL colors */
+    /* Main */
+    --main-100: hsl(45, 69%, 85%);
+    --main-200: hsl(45, 50%, 75%);
+    --main-300: hsl(45, 40%, 65%);
+    --main-400: hsl(45, 30%, 55%);
+    --main-500: hsl(45, 20%, 45%);
+    --main-600: hsl(45, 15%, 35%);
+    --main-700: hsl(45, 10%, 25%);
+    --main-800: hsl(45, 5%, 18%);
+    --main-900: hsl(45, 3%, 12%);
+
+    /* Primary */
+    --primary-100: hsl(215, 60%, 95%);
+    --primary-200: hsl(217, 70%, 85%);
+    --primary-300: hsl(220, 80%, 70%);
+    --primary-400: hsl(225, 90%, 55%);
+    --primary-500: hsl(230, 95%, 45%);
+    --primary-600: hsl(235, 80%, 35%);
+    --primary-700: hsl(240, 70%, 25%);
+    --primary-800: hsl(240, 60%, 15%);
+    --primary-900: hsl(240, 50%, 8%);
+
+    /* Accent */
+    --pink-100: hsl(350, 45%, 95%);
+    --pink-200: hsl(350, 60%, 85%);
+    --pink-300: hsl(350, 75%, 70%);
+    --green-100: hsl(125, 30%, 90%);
+    --green-200: hsl(135, 45%, 75%);
+    --green-300: hsl(145, 60%, 60%);
+    --yellow-100: hsl(50, 80%, 95%);
+    --yellow-200: hsl(45, 90%, 80%);
+    --yellow-300: hsl(40, 100%, 70%);
+    --red-100: hsl(0, 50%, 95%);
+    --red-200: hsl(0, 65%, 85%);
+    --red-300: hsl(0, 80%, 70%);
+
+
+
+
+
     /* Accordion variables */
     --accordion-button: hsl(0 0% 0% / 0.55);
-    --button-size: 3rem;
+    --button-small: 1rem;
+    --button-size: 2.2rem;
     --panel-padding: 0.75rem;
     --panels-gap: 1rem;
     --panel-gap: 1rem;
 
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -49,7 +95,13 @@ body {
     flex-basis: clamp(15rem, 40vh, 20rem);
     flex-grow: 1;
     transition: flex-basis 500ms, flex-grow 500ms;
-    
+
+}
+
+.closed-panel {
+    flex-basis: calc((var(--panel-padding) * 2) + var(--button-small));
+    flex-grow: 0;
+    transition: flex-basis 500ms, flex-grow 500ms;
 }
 
 .image-brightness {
@@ -64,15 +116,21 @@ body {
     transition: filter 500ms;
 }
 
-.closed-panel {
-    flex-basis: calc((var(--panel-padding) * 2) + var(--button-size));
-    flex-grow: 0;
-    transition: flex-basis 500ms, flex-grow 500ms;
+.panel-paragraph {
+    margin-left: calc(var(--button-small) + var(--panel-padding));
+    padding-inline-end: calc(var(--panel-padding) * 4);
 }
 
-.panel-paragraph {
-    margin-left: calc(var(--button-size) + var(--panel-padding));
-    padding-inline-end: calc(var(--panel-padding) * 4);
+@media (min-width: 1024px) {
+    .closed-panel {
+        flex-basis: calc((var(--panel-padding) * 2) + var(--button-size));
+        flex-grow: 0;
+        transition: flex-basis 500ms, flex-grow 500ms;
+    }
+
+    .panel-paragraph {
+        margin-left: calc(var(--button-size) + var(--panel-padding));
+    }
 }
 
 .pink-button {

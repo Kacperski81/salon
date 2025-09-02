@@ -40,7 +40,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="text-center flex flex-col gap-8 bg-[var(--bg-color)] min-h-screen relative">
+    <div className="text-center flex flex-col gap-8 bg-(--main-100) min-h-screen relative">
       <HeroSection />
       <AboutUs />
       {/* <Services /> */}
