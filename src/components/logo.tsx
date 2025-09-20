@@ -20,7 +20,7 @@ export function Logo2() {
 
 export function Logo3() {
     return (
-        <div className="fixed top-1 left-[50%] translate-x-[-50%] bg-transparent z-100">
+        <div className="bg-red-100 fixed top-1 left-[50%] translate-x-[-50%] bg-transparent z-100">
             <h2 className="px-4 py-1 font-(family-name:--font-red-hat-text) text-xl lg:text-3xl text-dark-gradient tracking-wider">
                 inf<span className="text-7 text-(--main-100)">in</span>ity mk
             </h2>
