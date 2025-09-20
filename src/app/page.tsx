@@ -2,10 +2,12 @@
 
 import AboutUs from "@/components/aboutUs";
 import Footer from "@/components/footer";
+import { Logo1 } from "@/components/logo";
 // import HeroSection from "@/components/heroSection";
 // import HeroSection2 from "@/components/heroSection2";
 import HeroSection3 from "@/components/heroSection3";
 import Services5 from "@/components/services5";
+import { LogInIcon } from "lucide-react";
 // import Services from "@/components/services";
 // import Services2 from "@/components/services2";
 // import Services3 from "@/components/services3";
@@ -42,7 +44,8 @@ export default function Home() {
   // }, [])
 
   return (
-    <div className="snap-y snap-mandatory text-center flex flex-col gap-8 bg-(--main-100) min-h-screen relative">
+    <div className="snap-y snap-mandatory text-center flex flex-col gap-8 bg-(--main-400) min-h-screen relative">
+      {/* <Logo1 /> */}
       {/* <HeroSection /> */}
       {/* <HeroSection2 /> */}
       <HeroSection3 />

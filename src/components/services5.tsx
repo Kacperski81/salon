@@ -80,17 +80,17 @@ export default function Services5() {
 
     return (
         // <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
-        <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
+        <section id="services" className="snap-center bg-(--main-400) min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
             <div className="grow flex flex-col lg:justify-center gap-3">
-                <h2 className="font-(family-name:--font-aboreto) text-3xl sm:text-4xl lg:text-5xl font-light">Our Services</h2>
-                <p className="leading-relaxed text-base sm:text-lg md:text-xl text-(--main-700)">
+                <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-3xl sm:text-4xl lg:text-5xl font-light">Our Services</h2>
+                <p className="leading-relaxed text-base sm:text-lg md:text-xl text-(--main-200)">
                     {`From a simple cut to a full makeover, we've got you covered.`}
                 </p>
                 {/* Wrapper */}
                 <div className="grow p-2 flex justify-center">
 
                     {/* Accordion */}
-                    <div className="bg-(--bg-color) grow flex flex-col lg: justify-center md:flex-row gap-(--panels-gap) lg:max-w-7xl">
+                    <div className="grow flex flex-col lg: justify-center md:flex-row gap-(--panels-gap) lg:max-w-7xl">
 
                         {serviceData.map((service) => {
                             return (

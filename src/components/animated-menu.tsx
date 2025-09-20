@@ -67,7 +67,7 @@ export default function AnimatedMenu() {
       >
         {/* Menu Panel */}
         <div
-          className={`fixed left-0 top-0 h-full w-full px-5 bg-[#F2E7CB] border-r-2 border-[#B8860B] shadow-2xl transform transition-transform duration-300 ease-out ${isOpen ? "translate-x-0" : "-translate-x-full"
+          className={`fixed left-0 top-0 h-full w-full px-5 bg-(--main-500) border-r-2 border-(--main-200) shadow-2xl transform transition-transform duration-300 ease-out ${isOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           onClick={(e) => e.stopPropagation()}
         >
@@ -76,7 +76,7 @@ export default function AnimatedMenu() {
               <Link
                 href="/"
                 onClick={handleLinkClick}
-                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/") ? "text-[#B8860B] font-semibold" : "text-[#333333] hover:text-[#B8860B]"
+                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/") ? "text-(--main-100) font-semibold" : "text-(--main-200) hover:text-(--main-100)"
                   }`}
               >
                 Home
@@ -84,7 +84,7 @@ export default function AnimatedMenu() {
               <Link
                 href="/hair"
                 onClick={handleLinkClick}
-                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/hair") ? "text-[#B8860B] font-semibold" : "text-[#333333] hover:text-[#B8860B]"
+                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/hair") ? "text-(--main-100) font-semibold" : "text-(--main-200) hover:text-(--main-100)"
                   }`}
               >
                 Hair
@@ -92,7 +92,7 @@ export default function AnimatedMenu() {
               <Link
                 href="/nails"
                 onClick={handleLinkClick}
-                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/nails") ? "text-[#B8860B] font-semibold" : "text-[#333333] hover:text-[#B8860B]"
+                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/nails") ? "text-(--main-100) font-semibold" : "text-(--main-200) hover:text-(--main-100)"
                   }`}
               >
                 Nails
@@ -100,7 +100,7 @@ export default function AnimatedMenu() {
               <Link
                 href="/beauty"
                 onClick={handleLinkClick}
-                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/beauty") ? "text-[#B8860B] font-semibold" : "text-[#333333] hover:text-[#B8860B]"
+                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/beauty") ? "text-(--main-100) font-semibold" : "text-(--main-200) hover:text-(--main-100)"
                   }`}
               >
                 Beauty
@@ -108,7 +108,7 @@ export default function AnimatedMenu() {
             </nav>
 
             <div className="mt-12 pt-8 border-t border-[#B8860B] border-opacity-30">
-              <div className="space-y-4 text-[#8B7355]">
+              <div className="space-y-4 text-(--main-100)">
                 <div className="font-source-sans">
                   <strong>Address:</strong>
                   <br />
