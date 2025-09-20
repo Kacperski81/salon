@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import hairBg from "../../public/zd2.jpg";
 import nailsBg from "../../public/card_nails.jpg";
 import beautyBg from "../../public/zd1.jpg";
-import productsBg from "../../public/card_hair_background.jpg";
+import productsBg from "../../public/davines-background.jpg";
 import { ScissorsSVG } from "./svgs";
 
 interface ServiceData {
@@ -79,7 +79,8 @@ export default function Services5() {
     }
 
     return (
-        <section id="services" className="bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
+        // <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
+        <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
             <div className="grow flex flex-col lg:justify-center gap-3">
                 <h2 className="font-(family-name:--font-aboreto) text-3xl sm:text-4xl lg:text-5xl font-light">Our Services</h2>
                 <p className="leading-relaxed text-base sm:text-lg md:text-xl text-(--main-700)">

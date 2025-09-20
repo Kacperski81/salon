@@ -22,37 +22,37 @@ export default function AnimatedMenu() {
   }
 
   return (
-    <>
+    <div className="">
       {/* Menu Button - Responsive positioning */}
       <button
         onClick={toggleMenu}
         className={`
-          fixed z-50 bg-transparent border border-[#B8860B] 
-          transition-all duration-300 flex items-center justify-center group
+          fixed z-50 border border-(--main-200) shadow-lg
+          transition-all duration-300 flex items-center justify-center group cursor-pointer
           
           /* Mobile: Square button in top-left corner */
-          top-1 right-2 w-12 h-12 rounded-lg
+          top-2 right-2 w-12 h-12 rounded-lg
           
           /* Tablet: Full height vertical bar on left side */
-          md:top-2 md:right-2 z-100 md:w-16 md:h-16
+          // md:top-2 md:right-2 z-100 md:w-10 md:h-10
 
           /* Desktop */
-          xl:top-1/2 xl:-translate-y-1/2 xl:left-1
+          lg:top-1/2 lg:-translate-y-1/2 lg:left-2
         `}
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
-        <div className="relative w-6 h-6 flex items-center">
+        <div className="relative w-6 xl:w-8 h-6 xl:h-8 flex items-center justify-center">
           <div className="space-y-1">
             <div
-              className={`w-6 h-0.5 bg-[#B8860B] transition-all duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-1.5 opacity-80" : "opacity-100"
+              className={`w-6 h-0.5 bg-(--main-200) transition-all duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-1.5 opacity-80" : "opacity-100"
                 }`}
             />
             <div
-              className={`w-6 h-0.5 bg-[#B8860B] transition-all duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
+              className={`w-6 h-0.5 bg-(--main-200) transition-all duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100"
                 }`}
             />
             <div
-              className={`w-6 h-0.5 bg-[#B8860B] transition-all duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-1.5 opacity-80" : "opacity-100"
+              className={`w-6 h-0.5 bg-(--main-200) transition-all duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-1.5 opacity-80" : "opacity-100"
                 }`}
             />
           </div>
@@ -157,7 +157,7 @@ export default function AnimatedMenu() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
