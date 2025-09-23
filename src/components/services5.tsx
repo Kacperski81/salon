@@ -2,9 +2,9 @@
 
 import { JSX, useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import hairBg from "../../public/zd2.jpg";
-import nailsBg from "../../public/card_nails.jpg";
-import beautyBg from "../../public/zd1.jpg";
+import hairBg from "../../public/cutAndStyleExpanded2.jpg";
+import nailsBg from "../../public/nailBackground.jpg";
+import beautyBg from "../../public/beautyBg2.jpg";
 import productsBg from "../../public/davines-background.jpg";
 import { ScissorsSVG } from "./svgs";
 
@@ -80,9 +80,9 @@ export default function Services5() {
 
     return (
         // <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
-        <section id="services" className="snap-center bg-(--main-400) min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
+        <section id="services" className="snap-start snap-always bg-(--main-400) min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
             <div className="grow flex flex-col lg:justify-center gap-3">
-                <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-3xl sm:text-4xl lg:text-5xl font-light">Our Services</h2>
+                <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-2xl sm:text-3xl lg:text-4xl xl:mt-5 font-light">Our Services</h2>
                 <p className="leading-relaxed text-base sm:text-lg md:text-xl text-(--main-200)">
                     {`From a simple cut to a full makeover, we've got you covered.`}
                 </p>
@@ -119,10 +119,9 @@ export default function Services5() {
                                     <Image
                                         src={service.image}
                                         alt={`${service.name} service image`}
-                                        layout="fill"
+                                        fill
                                         sizes="100vw"
-                                        objectFit="cover"
-                                        className={`-z-1 ${expandedPanel === service.id ? "image-brightness" : "image-brightness-light"}`}
+                                        className={`-z-1 object-cover ${expandedPanel === service.id ? "image-brightness" : "image-brightness-light"}`}
 
                                     />
                                 </div>

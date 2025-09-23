@@ -35,19 +35,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${aboreto.variable} ${lato.variable} antialiased`}
-      >
-        {/* <div className="m-7 pointer-events-none fixed inset-0 z-50 xl:border-4 xl:border-[#333333]">
-          <Hamburger />
-        </div> */}
+    <html lang="en" className="scroll-smooth snap-y snap-mandatory">
+      <body className={`${aboreto.variable} ${lato.variable} antialiased`}>
         <AnimatedMenu />
         <Logo3 />
         <div className="flex flex-col min-h-screen max-w-screen mx-auto bg-white text-sm">
           {children}
         </div>
-        {/* <Footer /> */}
       </body>
     </html>
   );

@@ -6,7 +6,7 @@ import CutAndStyle from "../../../public/cutAndStyle.jpg"
 import Colouring from "../../../public/colouring.jpg"
 import Texturing from "../../../public/zd1.jpg"
 import Treatments from "../../../public/zd2.jpg"
-import { Border1 } from "@/components/border"
+import { Border2 } from "@/components/border"
 // import RightBorder from "@/components/rightBorder"
 // import { Logo1 } from "@/components/logo"
 
@@ -179,10 +179,10 @@ export default function Hair() {
             flex 
             bg-(--main-200)
             bg-[url(../../public/expanded-bg-mobile.jpg)] 
-            lg:bg-[url(../../public/expanded-bg.jpg)]
+            lg:bg-[url(../../public/cutAndStyleExpanded2.jpg)]
             bg-blend-multiply 
             bg-right-top bg-cover bg-no-repeat">
-            <Border1 />
+            <Border2 />
             {/* <Logo1 /> */}
             <div className="grow flex lg:grid lg:grid-cols-2 xl:px-20">
                 <div className="relative grow flex flex-col">

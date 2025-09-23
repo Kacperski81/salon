@@ -6,12 +6,11 @@ import { Border2 } from "./border";
 export default function heroSection3() {
     return (
         <>
-            {/* <Logo1 /> */}
-            <section className="xl:grid xl:grid-cols-2">
+            <section className="snap-start snap-always min-h-screen xl:grid xl:grid-cols-2">
                 {/* <div className="relative min-h-screen flex bg-(--main-200) bg-[url(../../public/bg-no-picture.png)] bg-blend-multiply bg-cover bg-center bg-no-repeat"> */}
                 <div className="
                     min-h-screen
-                    bg-(--main-400) 
+                    bg-(--main-300) 
                     bg-[url(../../public/right_hero.jpg)]
                     bg-blend-multiply
                     bg-cover
