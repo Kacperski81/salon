@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth snap-y snap-mandatory">
-      <body className={`${aboreto.variable} ${lato.variable} antialiased`}>
+      <body className={`${aboreto.variable} ${lato.variable} ${redHatText.variable} font-sans antialiased`}>
         <AnimatedMenu />
         <Logo3 />
         <div className="flex flex-col min-h-screen max-w-screen mx-auto bg-white text-sm">
