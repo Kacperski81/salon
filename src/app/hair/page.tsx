@@ -1,132 +1,65 @@
 "use client"
 
-import { StaticImageData } from "next/image"
-import { useState, useRef } from "react"
-import CutAndStyle from "../../../public/cutAndStyle.jpg"
-import Colouring from "../../../public/colouring.jpg"
-import Texturing from "../../../public/zd1.jpg"
-import Treatments from "../../../public/zd2.jpg"
-import { Border2 } from "@/components/border"
-// import RightBorder from "@/components/rightBorder"
-// import { Logo1 } from "@/components/logo"
+import { useState } from "react";
+import { Border2 } from "@/components/border";
 
-interface hairServiceData {
-    id: number;
-    image: StaticImageData;
+// Define the type for a treatment item
+type hairServiceItem = {
+    service: string;
+    price?: string;
+    short_hair_price?: string;
+    medium_hair_price?: string;
+    long_hair_price?: string | null;
+};
+
+// Define the type for a main section category
+type HairServiceCategory = {
+    id: string;
     name: string;
-    items: {
-        service: string;
-        price?: string;
-        short_hair_price?: string;
-        medium_hair_price?: string;
-        long_hair_price?: string | null;
-    }[];
-}
+    items: hairServiceItem[];
+};
 
+// Define the type for the entire price list object
+type HairServicesData = HairServiceCategory[];
 
-const hairServicesData: hairServiceData[] = [
+// This static data is now defined outside the component, which is a common best practice.
+const hairServicesData: HairServicesData = [
     {
-        "id": 0,
+        "id": "cut-and-style",
         "name": "Cut & Style",
-        "image": CutAndStyle,
         "items": [
-            {
-                "service": "Ladies' Haircut",
-                "price": "£70"
-            },
-            {
-                "service": "Ladies' Restyle",
-                "price": "£75"
-            },
-            {
-                "service": "Gents Haircut",
-                "price": "£46"
-            },
-            {
-                "service": "Under 10 Years Old Girls",
-                "price": "From £15"
-            },
-            {
-                "service": "11 to 16 Years Old Girls",
-                "price": "£35"
-            },
-            {
-                "service": "11 to 16 Years Old Boys",
-                "price": "£28"
-            },
-            {
-                "service": "Blow Dry Short Hair",
-                "price": "£35"
-            },
-            {
-                "service": "Blow Dry Medium Hair",
-                "price": "£38"
-            },
-            {
-                "service": "Blow Dry Long Hair",
-                "price": "From £42"
-            },
-            {
-                "service": "Hair Up / Wedding Hair",
-                "price": "From £75"
-            }
+            { "service": "Ladies' Haircut", "price": "£70" },
+            { "service": "Ladies' Restyle", "price": "£75" },
+            { "service": "Gents Haircut", "price": "£46" },
+            { "service": "Under 10 Years Old Girls", "price": "From £15" },
+            { "service": "11 to 16 Years Old Girls", "price": "£35" },
+            { "service": "11 to 16 Years Old Boys", "price": "£28" },
+            { "service": "Blow Dry Short Hair", "price": "£35" },
+            { "service": "Blow Dry Medium Hair", "price": "£38" },
+            { "service": "Blow Dry Long Hair", "price": "From £42" },
+            { "service": "Hair Up / Wedding Hair", "price": "From £75" }
         ]
     },
     {
-        "id": 1,
+        "id": "colouring",
         "name": "Colouring",
-        "image": Colouring,
         "items": [
-            {
-                "service": "Full Head Of Highlights or Balayage",
-                "price": "£130"
-            },
-            {
-                "service": "3/4 Head Of Highlights or Balayage",
-                "price": "£120"
-            },
-            {
-                "service": "1/2 Head Of Highlights or Balayage",
-                "price": "£100"
-            },
-            {
-                "service": "Single Foils (t-sections)",
-                "price": "From £50"
-            },
-            {
-                "service": "Full Head Tint",
-                "price": "£70"
-            },
-            {
-                "service": "Re-growth Tint",
-                "price": "£55"
-            },
-            {
-                "service": "Glossing (Semi Permanent)",
-                "price": "£55"
-            },
-            {
-                "service": "Full Head Bleach (Toner included)",
-                "price": "£110"
-            },
-            {
-                "service": "Re-growth Bleach (Toner included)",
-                "price": "£90"
-            },
-            {
-                "service": "Men's Grey Blending",
-                "price": "£25"
-            },
-            {
-                "service": "Toner",
-                "price": "From £25"
-            }
+            { "service": "Full Head Of Highlights or Balayage", "price": "£130" },
+            { "service": "3/4 Head Of Highlights or Balayage", "price": "£120" },
+            { "service": "1/2 Head Of Highlights or Balayage", "price": "£100" },
+            { "service": "Single Foils (t-sections)", "price": "From £50" },
+            { "service": "Full Head Tint", "price": "£70" },
+            { "service": "Re-growth Tint", "price": "£55" },
+            { "service": "Glossing (Semi Permanent)", "price": "£55" },
+            { "service": "Full Head Bleach (Toner included)", "price": "£110" },
+            { "service": "Re-growth Bleach (Toner included)", "price": "£90" },
+            { "service": "Men's Grey Blending", "price": "£25" },
+            { "service": "Toner", "price": "From £25" }
         ]
     },
     {
-        "id": 2,
+        "id": "texturing-and-straightening",
         "name": "Texturing & Straightening",
-        "image": Texturing,
         "items": [
             {
                 "service": "Perm",
@@ -143,34 +76,22 @@ const hairServicesData: hairServiceData[] = [
         ]
     },
     {
-        "id": 3,
+        "id": "treatments",
         "name": "Treatments",
-        "image": Treatments,
         "items": [
-            {
-                "service": "Fusio Dose (Kerastase)",
-                "price": "£20"
-            },
-            {
-                "service": "Power-Mix (L'Oreal)",
-                "price": "£15"
-            },
-            {
-                "service": "Olaplex",
-                "price": "£40"
-            }
+            { "service": "Fusio Dose (Kerastase)", "price": "£20" },
+            { "service": "Power-Mix (L'Oreal)", "price": "£15" },
+            { "service": "Olaplex", "price": "£40" }
         ]
-    }]
+    }
+];
 
 export default function Hair() {
-    const [expandedPanel, setExpandedPanel] = useState<number>(0);
-    const panelRef = useRef<HTMLDivElement>(null);
+    const [expandedPanel, setExpandedPanel] = useState<string>("cut-and-style");
 
-
-    const togglePanel = (panelId: number) => {
+    const togglePanel = (panelId: string) => {
         setExpandedPanel(panelId);
     }
-
 
     return (
         <section className="
@@ -179,27 +100,26 @@ export default function Hair() {
             flex 
             bg-(--main-200)
             bg-[url(../../public/expanded-bg-mobile.jpg)] 
-            lg:bg-[url(../../public/cutAndStyleExpanded2.jpg)]
+            lg:bg-[url(../../public/hairServicesBg.jpg)]
             bg-blend-multiply 
             bg-right-top bg-cover bg-no-repeat">
             <Border2 />
-            {/* <Logo1 /> */}
             <div className="grow flex lg:grid lg:grid-cols-2 xl:px-20">
-                <div className="relative grow flex flex-col">
+                <div className="relative grow flex flex-col lg:col-start-2">
+                    {/* Heading */}
                     <h3 className="mt-10 font-(family-name:--font-aboreto) self-center pt-3 pb-2 px-10 text-2xl text-(--main-100)">SERVICES</h3>
 
-                    {/* wrapper */}
+                    {/* Wrapper */}
                     <div className="panelV2 grow flex justify-center lg:flex-col px-1 pb-2 xl:pb-10">
 
                         {/* Accordion */}
                         <div className="grow flex flex-col gap-4 px-2 lg:px-10">
                             {hairServicesData.map((service) => {
                                 return (
-                                    // Accordion panel
-                                    <div key={service.id}
+                                    <div
+                                        key={service.id}
                                         onClick={() => togglePanel(service.id)}
-                                        className={`isolate overflow-hidden relative ${expandedPanel === service.id ? "shadow-xl opened-panel" : "shadow-xl closed-panel cursor-pointer"}`}
-                                        ref={panelRef}
+                                        className={`border-gradient isolate overflow-hidden relative ${expandedPanel === service.id ? "shadow-xl opened-panel" : "shadow-xl closed-panel cursor-pointer"}`}
                                     >
 
                                         {/* Accordion heading */}
@@ -213,51 +133,53 @@ export default function Hair() {
 
                                         {/* Accordion content */}
                                         <div id={`${service.name}-content}`} aria-labelledby={`${service.name}-heading`} role="region" aria-hidden={service.id !== expandedPanel} className={`flex justify-center z-10 text-xl ${expandedPanel === service.id ? "" : ""}`}>
+
                                             <div className={`xl:px-10 grow p-1 text-left relative text-(--main-900) opacity-0 ${expandedPanel === service.id ? " opacity-100 transition-opacity duration-500 delay-500" : "opacity-0 transition-opacity duration-200 delay-100"}`}>
 
-                                                <table className="w-full border-separate border-spacing-0 border-collapse px-2 lg:px-3 lg:py-2">
-                                                    <thead className="">
-                                                        <tr className="text-(--main-300)">
-                                                            <th className="border-b border-(--main-400) p-1 xl:px-10">Service</th>
-                                                            <th className="text-center border-b border-(--main-400)">Price</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody className="">
-                                                        {service.items.map((item) => {
-                                                            return (
-                                                                <tr key={item.service} className="group text-xs md:text-large lg:text-base xl:text-base block-inline">
-                                                                    <td className="border-b border-(--main-300) group-[:last-child]:border-b-0 p-1 xl:px-10 text-(--main-100)">{item.service}</td>
-                                                                    <td className="text-center p-1 border-b border-b-(--main-300) group-[:last-child]:border-b-0 text-(--main-100)">{item.price}</td>
-                                                                </tr>
-                                                            )
-                                                        })}
-                                                    </tbody>
-                                                </table>
+                                                <ul>
+                                                    {service.items.map((item) => {
+                                                        return (
+                                                            <li key={item.service} className="group border-b border-b-(--main-300) group-[:last-child]:border-b-0 p-1 group text-xs md:text-large lg:text-base xl:text-lg block-inline xl:px-10">
+                                                                <div className="flex justify-between">
+                                                                    <h3 className="text-(--main-100) self-center">{item.service}</h3>
+                                                                    <div className="p-1 text-(--main-100)">
+                                                                        {
+                                                                            item.price && (
+                                                                                <p className="">{item.price}</p>
+                                                                            )
+                                                                        }
+                                                                        {
+                                                                            item.short_hair_price && (
+                                                                                <p>Short: {item.short_hair_price}</p>
+                                                                            )
+                                                                        }
+                                                                        {
+                                                                            item.medium_hair_price && (
+                                                                                <p>Medium: {item.medium_hair_price}</p>
+                                                                            )
+                                                                        }
+                                                                        {
+                                                                            item.long_hair_price && (
+                                                                                <p>Long: {item.long_hair_price}</p>
+                                                                            )
+                                                                        }
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        )
+                                                    })}
+                                                </ul>
                                             </div>
-
                                         </div>
                                     </div>
                                 )
-                            })}
+                            }
+                            )}
+
                         </div>
                     </div>
-
                 </div>
-
-                {/* <div className="relative">
-                    <RightBorder />
-                    <div>
-                        <Image
-                            alt="image"
-                            src={hairServicesData[expandedPanel].image}
-                            fill
-                            sizes="100vw"
-                            className="object-cover object-top"
-                        />
-                    </div>
-                </div> */}
             </div>
         </section>
     )
 }
-

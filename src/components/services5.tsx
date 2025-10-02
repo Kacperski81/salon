@@ -3,7 +3,7 @@
 import { JSX, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import hairBg from "../../public/cutAndStyleExpanded2.jpg";
-import nailsBg from "../../public/nailBackground.jpg";
+import nailsBg from "../../public/mainServicesNails.jpg";
 import beautyBg from "../../public/beautyBg2.jpg";
 import productsBg from "../../public/davines-background.jpg";
 import { ScissorsSVG } from "./svgs";
@@ -82,7 +82,7 @@ export default function Services5() {
         // <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
         <section id="services" className="snap-start snap-always bg-(--main-400) min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
             <div className="grow flex flex-col lg:justify-center gap-3">
-                <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-2xl sm:text-3xl lg:text-4xl xl:mt-5 font-light">Our Services</h2>
+                <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-2xl sm:text-3xl lg:text-4xl mt-8 xl:mt-5 font-light">Our Services</h2>
                 <p className="leading-relaxed text-base sm:text-lg md:text-xl text-(--main-200)">
                     {`From a simple cut to a full makeover, we've got you covered.`}
                 </p>
@@ -104,7 +104,7 @@ export default function Services5() {
                                         <button aria-controls={`${service.id}-content`} aria-expanded={service.id === expandedPanel}
                                             className="bg-transparent flex items-center flex-row-reverse gap-(--panel-gap)">
 
-                                            {/* Panel 1 title */}
+                                            {/* Panel title */}
                                             <span className="text-white text-sm lg:text-2xl font-bold">{service.name}</span>
                                             {/* Accordion icon */}
                                             <div className="bg-(--accordion-button) w-(--button-small) lg:w-(--button-size) p-1 rounded-full aspect-square">{service.services[0].icon}</div>

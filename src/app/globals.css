@@ -14,6 +14,7 @@
 
     /* HSL colors */
     /* Main */
+    --main-10: hsl(45, 85%, 90%);
     --main-50: hsl(45, 85%, 95%);
     --main-100: hsl(45, 69%, 85%);
     --main-200: hsl(45, 50%, 75%);
@@ -318,4 +319,13 @@ body {
             var(--main-50) 100%);
     background-clip: text;
     color: transparent;
+}
+
+.border-gradient {
+    /* border-inline-start: 2px solid; */
+    /* border-block-start: 2px solid; */
+    border: 1px solid;
+    border-image-source: 
+        radial-gradient(circle at top left, var(--main-300), var(--main-400));
+    border-image-slice: 1;
 }

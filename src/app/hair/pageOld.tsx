@@ -1,123 +1,189 @@
 "use client"
 
-import { useState, useRef } from "react";
-import { Border2 } from "@/components/border";
+import { StaticImageData } from "next/image"
+import { useState, useRef } from "react"
+import CutAndStyle from "../../../public/cutAndStyle.jpg"
+import Colouring from "../../../public/colouring.jpg"
+import Texturing from "../../../public/zd1.jpg"
+import Treatments from "../../../public/zd2.jpg"
+import { Border2 } from "@/components/border"
+// import RightBorder from "@/components/rightBorder"
+// import { Logo1 } from "@/components/logo"
 
-type nailsServiceData = {
+type hairServiceData = {
     id: number;
+    image: StaticImageData;
     name: string;
     items: {
         service: string;
-        price: string
+        price?: string;
+        short_hair_price?: string;
+        medium_hair_price?: string;
+        long_hair_price?: string | null;
     }[];
 }
 
-const nailsServiceData: nailsServiceData[] = [
+
+const hairServicesData: hairServiceData[] = [
     {
         "id": 0,
-        "name": "Manicure",
+        "name": "Cut & Style",
+        "image": CutAndStyle,
         "items": [
             {
-                "service": "Hard Gel Extensions",
+                "service": "Ladies' Haircut",
+                "price": "£70"
+            },
+            {
+                "service": "Ladies' Restyle",
+                "price": "£75"
+            },
+            {
+                "service": "Gents Haircut",
                 "price": "£46"
             },
             {
-                "service": "Infill (Gel or Protein Base)",
-                "price": "£38"
+                "service": "Under 10 Years Old Girls",
+                "price": "From £15"
             },
             {
-                "service": "Nail Art (per finger)",
-                "price": "£2"
+                "service": "11 to 16 Years Old Girls",
+                "price": "£35"
             },
             {
-                "service": "Broken Nail Repair (Extensions - Hands or Feet)",
-                "price": "£5"
-            },
-            {
-                "service": "Full Manicure (Protein Base, Shellac Color, Cuticle & Skin Treatment)",
-                "price": "£46"
-            },
-            {
-                "service": "Full Manicure (Shellac Color, Cuticle & Skin Treatment)",
-                "price": "£40"
-            },
-            {
-                "service": "Full Manicure (Normal Varnish, Cuticle & Skin Treatment)",
+                "service": "11 to 16 Years Old Boys",
                 "price": "£28"
             },
             {
-                "service": "Manicure Tidy Up (Protein Base & Shellac Color)",
+                "service": "Blow Dry Short Hair",
+                "price": "£35"
+            },
+            {
+                "service": "Blow Dry Medium Hair",
                 "price": "£38"
             },
             {
-                "service": "Manicure Tidy Up (Shellac Color Only)",
-                "price": "£30"
+                "service": "Blow Dry Long Hair",
+                "price": "From £42"
             },
             {
-                "service": "Manicure Tidy Up (Normal Varnish Color Only)",
-                "price": "£15"
+                "service": "Hair Up / Wedding Hair",
+                "price": "From £75"
             }
         ]
     },
     {
         "id": 1,
-        "name": "Pedicure",
+        "name": "Colouring",
+        "image": Colouring,
         "items": [
             {
-                "service": "Full Pedicure (Shellac Color, Hard Skin Removal, Treatment)",
-                "price": "£46"
+                "service": "Full Head Of Highlights or Balayage",
+                "price": "£130"
             },
             {
-                "service": "Full Pedicure (Normal Varnish Color, Hard Skin Removal Treatment)",
-                "price": "£32"
+                "service": "3/4 Head Of Highlights or Balayage",
+                "price": "£120"
             },
             {
-                "service": "Pedicure Tidy Up (Shellac Color)",
-                "price": "£32"
+                "service": "1/2 Head Of Highlights or Balayage",
+                "price": "£100"
             },
             {
-                "service": "Pedicure Tidy Up (Normal Varnish)",
-                "price": "£15"
+                "service": "Single Foils (t-sections)",
+                "price": "From £50"
+            },
+            {
+                "service": "Full Head Tint",
+                "price": "£70"
+            },
+            {
+                "service": "Re-growth Tint",
+                "price": "£55"
+            },
+            {
+                "service": "Glossing (Semi Permanent)",
+                "price": "£55"
+            },
+            {
+                "service": "Full Head Bleach (Toner included)",
+                "price": "£110"
+            },
+            {
+                "service": "Re-growth Bleach (Toner included)",
+                "price": "£90"
+            },
+            {
+                "service": "Men's Grey Blending",
+                "price": "£25"
+            },
+            {
+                "service": "Toner",
+                "price": "From £25"
             }
         ]
     },
     {
         "id": 2,
-        "name": "Additional Services",
+        "name": "Texturing & Straightening",
+        "image": Texturing,
         "items": [
             {
-                "service": "Shellac Removal",
-                "price": "£10"
+                "service": "Perm",
+                "short_hair_price": "£80",
+                "medium_hair_price": "£90",
+                "long_hair_price": null
             },
             {
-                "service": "Paraffin Treatment",
-                "price": "£5"
+                "service": "Brazilian Blow Dry/Keratin treatment",
+                "short_hair_price": "£120",
+                "medium_hair_price": "£160",
+                "long_hair_price": "£190"
             }
         ]
-    }
-];
+    },
+    {
+        "id": 3,
+        "name": "Treatments",
+        "image": Treatments,
+        "items": [
+            {
+                "service": "Fusio Dose (Kerastase)",
+                "price": "£20"
+            },
+            {
+                "service": "Power-Mix (L'Oreal)",
+                "price": "£15"
+            },
+            {
+                "service": "Olaplex",
+                "price": "£40"
+            }
+        ]
+    }]
 
-export default function Nails() {
+export default function Hair() {
     const [expandedPanel, setExpandedPanel] = useState<number>(0);
     const panelRef = useRef<HTMLDivElement>(null);
+
 
     const togglePanel = (panelId: number) => {
         setExpandedPanel(panelId);
     }
 
+
     return (
         <section className="
             text-center 
-            grow-1
+            grow-1 
             flex 
-            bg-(--main-300)
-            bg-[url(../../public/nailsBgFlowers.jpg)]
-            bg-blend-multiply
-            bg-left-top
-            bg-cover
-            bg-no-repeat">
-
+            bg-(--main-200)
+            bg-[url(../../public/expanded-bg-mobile.jpg)] 
+            lg:bg-[url(../../public/hairServicesBg.jpg)]
+            bg-blend-multiply 
+            bg-right-top bg-cover bg-no-repeat">
             <Border2 />
+            {/* <Logo1 /> */}
             <div className="grow flex lg:grid lg:grid-cols-2 xl:px-20">
                 <div className="relative grow flex flex-col lg:col-start-2">
                     <h3 className="mt-10 font-(family-name:--font-aboreto) self-center pt-3 pb-2 px-10 text-2xl text-(--main-100)">SERVICES</h3>
@@ -127,12 +193,12 @@ export default function Nails() {
 
                         {/* Accordion */}
                         <div className="grow flex flex-col gap-4 px-2 lg:px-10">
-                            {nailsServiceData.map((service) => {
+                            {hairServicesData.map((service) => {
                                 return (
                                     // Accordion panel
                                     <div key={service.id}
                                         onClick={() => togglePanel(service.id)}
-                                        className={`border-gradient isolate overflow-hidden relative rounded-sm ${expandedPanel === service.id ? "shadow-xl opened-panel" : "shadow-xl closed-panel cursor-pointer"}`}
+                                        className={`border-gradient isolate overflow-hidden relative ${expandedPanel === service.id ? "shadow-xl opened-panel" : "shadow-xl closed-panel cursor-pointer"}`}
                                         ref={panelRef}
                                     >
 
@@ -177,7 +243,21 @@ export default function Nails() {
                     </div>
 
                 </div>
+
+                {/* <div className="relative">
+                    <RightBorder />
+                    <div>
+                        <Image
+                            alt="image"
+                            src={hairServicesData[expandedPanel].image}
+                            fill
+                            sizes="100vw"
+                            className="object-cover object-top"
+                        />
+                    </div>
+                </div> */}
             </div>
         </section>
     )
 }
+
