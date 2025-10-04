@@ -108,7 +108,7 @@ export default function Services5() {
                                             <span className="text-white text-lg lg:text-xl xl:text-2xl font-bold relative isolate grid items-center service-button-bg">{service.name}</span>
                                             {/* Accordion icon */}
                                             {/* <div className="bg-(--accordion-button) w-(--button-small) lg:w-(--button-size) p-1 rounded-full aspect-square">{service.services[0].icon}</div> */}
-                                            <div className="bg-(--service-accordion-button) w-(--service-button-small) p-(--service-button-padding) rounded-full aspect-square flex justify-center z-10">{service.services[0].icon}</div>
+                                            <div className="bg-(--service-accordion-button) w-(--service-button-small) h-(--service-button-small) p-(--service-button-padding) rounded-full aspect-square flex justify-center z-10">{service.services[0].icon}</div>
                                         </button>
                                     </h3>
 
