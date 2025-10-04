@@ -8,7 +8,7 @@ import beautyBg from "../../public/beautyBg2.jpg";
 import productsBg from "../../public/davines-background.jpg";
 import { ScissorsSVG, BeautySVG, NailSVG, ProductsSVG } from "./svgs";
 
-interface ServiceData {
+type ServiceData = {
     id: string
     name: string
     image: StaticImageData;
@@ -105,7 +105,7 @@ export default function Services5() {
                                             className="bg-transparent border-0 flex items-center flex-row-reverse gap-(--service-panel-gap)">
 
                                             {/* Panel title */}
-                                            <span className="text-white text-xl lg:text-2xl font-bold relative isolate grid items-center service-button-bg">{service.name}</span>
+                                            <span className="text-white text-lg lg:text-xl xl:text-2xl font-bold relative isolate grid items-center service-button-bg">{service.name}</span>
                                             {/* Accordion icon */}
                                             {/* <div className="bg-(--accordion-button) w-(--button-small) lg:w-(--button-size) p-1 rounded-full aspect-square">{service.services[0].icon}</div> */}
                                             <div className="bg-(--service-accordion-button) w-(--service-button-small) p-(--service-button-padding) rounded-full aspect-square flex justify-center z-10">{service.services[0].icon}</div>
@@ -114,7 +114,7 @@ export default function Services5() {
 
                                     {/* Accordion content * Panel 1 content */}
                                     <div id={`${service.id}-content`} aria-labelledby={`${service.id}-heading}`} role="region" aria-hidden={service.id !== expandedPanel} className="relative z-10">
-                                        <p className={`service-panel-paragraph text-left relative text-white text-lg opacity-0 max-w-[70ch]  ${expandedPanel === service.id ? "opacity-100 transition-opacity duration-500 delay-500 translate-y-0 transition-transform duration-100" : "opacity-0 transition-opacity duration-500 delay-500 transition-transform  duration-500"}`}>{service.services[0].description}<span className="block text-right w-full">see more</span></p>
+                                        <p className={`service-panel-paragraph text-left relative text-white text-sm lg:text-lg opacity-0 max-w-[70ch]  ${expandedPanel === service.id ? "opacity-100 transition-opacity duration-500 delay-500 translate-y-0 transition-transform duration-100" : "opacity-0 transition-opacity duration-500 delay-500 transition-transform  duration-500"}`}>{service.services[0].description}<span className="block text-right w-full">see more</span></p>
                                     </div>
                                     <Image
                                         src={service.image}
