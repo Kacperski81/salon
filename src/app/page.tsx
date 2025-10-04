@@ -2,8 +2,8 @@
 
 import AboutUs from "@/components/aboutUs";
 import Footer from "@/components/footer";
-import HeroSection3 from "@/components/heroSection3";
-import Services5 from "@/components/services5";
+import HeroSection3 from "@/components/heroSection";
+import Services5 from "@/components/services";
 // import { useState, useEffect } from "react";
 
 export default function Home() {

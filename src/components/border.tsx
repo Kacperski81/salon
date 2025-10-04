@@ -2,7 +2,7 @@ import type React from "react"
 
 // export default function Border() {
 //   return (
-//     <div className="m-3 hidden xl:block fixed top-0 left-0 bottom-0 right-[50%] pointer-events-none">
+//     <div className="m-3 hidden lg:block fixed top-0 left-0 bottom-0 right-[50%] pointer-events-none">
       
 //       {/* Top border */}
 //       <div className="absolute top-0 left-0 right-0 bottom-0 h-8">
@@ -135,7 +135,7 @@ export function Border2() {
   // This component draws a seamless, double-line border around the
   // left half of the screen on large desktops (xl breakpoint).
   return (
-    <div className="m-4 hidden xl:block fixed inset-0 pointer-events-none">
+    <div className="m-4 hidden lg:block fixed inset-0 pointer-events-none">
       {/* The single SVG element now contains two paths to create the
         double-line effect with connected corners.
       */}

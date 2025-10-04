@@ -1,43 +1,132 @@
-import Link from "next/link";
+"use client"
 
-export default function Services() {
+import { JSX, useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import hairBg from "../../public/zd2.jpg";
+import nailsBg from "../../public/mainServicesNails.jpg";
+import beautyBg from "../../public/beautyBg2.jpg";
+import productsBg from "../../public/davines-background.jpg";
+import { ScissorsSVG, BeautySVG, NailSVG, ProductsSVG } from "./svgs";
+
+type ServiceData = {
+    id: string
+    name: string
+    image: StaticImageData;
+    services: Array<{
+        name: string
+        description: string
+        icon: JSX.Element
+    }>
+}
+
+
+const serviceData: ServiceData[] = [
+    {
+        id: "hair",
+        name: "Hair",
+        image: hairBg,
+        services: [
+            {
+                name: "Hair Services",
+                description: "Precision cuts, vibrant colors, and nourishing treatments to bring out the best in your hair.",
+                icon: <ScissorsSVG className="text-(--main-50)" />,
+            }
+        ]
+    },
+    {
+        id: "nail",
+        name: "Nail",
+        image: nailsBg,
+        services: [
+            {
+                name: "Nail Care",
+                description: "Manicures, pedicures, and artistic nail designs for perfectly polished hands and feet.",
+                icon: <NailSVG className="text-(--main-50)" />,
+            }
+        ]
+    },
+    {
+        id: "beauty",
+        name: "Beauty",
+        image: beautyBg,
+        services: [
+            {
+                name: "Beauty Treatments",
+                description: "Rejuvenating facials, waxing, and makeup services to enhance your natural beauty.",
+                icon: <BeautySVG className="text-(--main-50)" />,
+            }
+        ]
+    },
+    {
+        id: "products",
+        name: "Products",
+        image: productsBg,
+        services: [
+            {
+                name: "Products",
+                description: "Rejuvenating facials, waxing, and makeup services to enhance your natural beauty.",
+                icon: <ProductsSVG className="text-(--main-50)" />,
+            }
+        ]
+    },
+]
+
+export default function Services5() {
+    const [expandedPanel, setExpandedPanel] = useState<string>("hair");
+
+    const togglePanel = (panelId: string) => {
+        setExpandedPanel(panelId);
+    }
+
     return (
-        <section className="font-(family-name:--font-lato) min-h-screen flex flex-col items-center">
-            <div className="mb-10 flex flex-col gap-3">
-                <h2 className="mt-4 font-(family-name:--font-aboreto) text-3xl xl:text-4xl xl:font-bold">Our Services</h2>
-                <h3 className="text-2xl font-(family-name:--font-aboreto)">{`From a simple cut to a full makeover, we've got you covered.`}</h3>
-            </div>
-            {/* cards */}
-            <div className="basis-xl max-w-[55%] grid grid-cols-3 gap-20">
-                {/* Hair */}
-                {/* <div className="flex items-end w-1/4 aspect-[2/1] mx-auto border-image shadow-2xl">
-                    <div className="text-white">
-                        <h4>Hair Styling</h4>
-                        <p>Precision cuts, vibrant colors, and nourishing treatments to bring out the best in your hair.</p>
-                        <Link href="/hair">See more</Link>
+        // <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
+        <section id="services" className="snap-start snap-always bg-(--main-400) min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
+            <div className="grow flex flex-col lg:justify-center gap-3">
+                <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-2xl sm:text-3xl lg:text-4xl mt-8 xl:mt-5 font-light">Our Services</h2>
+                <p className="leading-relaxed text-base sm:text-lg md:text-xl text-(--main-200)">
+                    {`From a simple cut to a full makeover, we've got you covered.`}
+                </p>
+                {/* Wrapper */}
+                <div className="grow p-2 flex justify-center">
+
+                    {/* Accordion */}
+                    <div className="grow flex flex-col lg:justify-center lg:flex-row gap-(--panels-gap) lg:max-w-6xl">
+
+                        {serviceData.map((service) => {
+                            return (
+                                // Accordion panel
+                                <div key={service.id} onClick={() => togglePanel(service.id)}
+                                    className={`relative isolate p-(--service-panel-padding) overflow-hidden panel-radius flex flex-col ${expandedPanel === service.id ? "service-panel-opened" : "service-panel-closed"}`}>
+                                    {/* Accordion heading */}
+                                    <h3 id={`${service.id}-heading`} className="">
+
+                                        {/* Accordion trigger */}
+                                        <button aria-controls={`${service.id}-content`} aria-expanded={service.id === expandedPanel}
+                                            className="bg-transparent border-0 flex items-center flex-row-reverse gap-(--service-panel-gap)">
+
+                                            {/* Panel title */}
+                                            <span className="text-white text-lg lg:text-xl xl:text-2xl font-bold relative isolate grid items-center service-button-bg">{service.name}</span>
+                                            {/* Accordion icon */}
+                                            {/* <div className="bg-(--accordion-button) w-(--button-small) lg:w-(--button-size) p-1 rounded-full aspect-square">{service.services[0].icon}</div> */}
+                                            <div className="bg-(--service-accordion-button) w-(--service-button-small) h-(--service-button-small) p-(--service-button-padding) rounded-full aspect-square flex justify-center z-10">{service.services[0].icon}</div>
+                                        </button>
+                                    </h3>
+
+                                    {/* Accordion content * Panel 1 content */}
+                                    <div id={`${service.id}-content`} aria-labelledby={`${service.id}-heading}`} role="region" aria-hidden={service.id !== expandedPanel} className="relative z-10">
+                                        <p className={`service-panel-paragraph text-left relative text-white text-sm lg:text-lg opacity-0 max-w-[70ch]  ${expandedPanel === service.id ? "opacity-100 transition-opacity duration-500 delay-500 translate-y-0 transition-transform duration-100" : "opacity-0 transition-opacity duration-500 delay-500 transition-transform  duration-500"}`}>{service.services[0].description}<span className="block text-right w-full">see more</span></p>
+                                    </div>
+                                    <Image
+                                        src={service.image}
+                                        alt={`${service.name} service image`}
+                                        fill
+                                        sizes="100vw"
+                                        className={`-z-1 object-cover ${expandedPanel === service.id ? "image-brightness" : "image-brightness-light"}`}
+                                    />
+                                </div>
+                            )
+                        })}
                     </div>
-                </div> */}
-                <div className="flex shadow-2xl card card-hair flex items-end">
-                    <div className="text-white px-4 pb-4 flex flex-col gap-4">
-                        <h4 className="font-(family-name:--font-aboreto) text-3xl text-left">Hair Styling</h4>
-                        <p className="text-2xl text-left">Precision cuts, vibrant colors, and nourishing treatments to bring out the best in your hair.</p>
-                        <Link className="text-xl self-end bg-[var(--soft-lavender)] font-bold text-[var(--text-color)] px-4 py-2 rounded" href="/hair">See more</Link>
-                    </div>
-                </div>
-                {/* Nail */}
-                <div className="flex shadow-2xl card card-nail flex items-end">
-                    <div className="text-white px-4 pb-4 flex flex-col gap-4">
-                        <h4 className="font-(family-name:--font-aboreto) text-3xl text-left">Nail Care</h4>
-                        <p className="text-2xl text-left">Manicures, pedicures, and artistic nail designs for perfectly polished hands nad feet.</p>
-                        <Link className="text-xl self-end bg-[var(--sage-green)] px-4 py-2 rounded" href="/nails">See more</Link>
-                    </div>
-                </div>
-                {/* Beauty */}
-                <div>
-                    <svg></svg>
-                    <h4>Beauty Treatments</h4>
-                    <p>Rejuvenating facials, waxing, and makeup services to enhance your natural beauty.</p>
-                    <Link href="/beauty">See more</Link>
                 </div>
             </div>
         </section>

@@ -17,9 +17,9 @@ export default function Footer() {
         <footer id="footer" className="snap-center bg-(--main-800) min-h-screen py-2 sm:py-10 flex items-center">
             {/* container */}
             <div className="container mx-auto py-2 px-4 md:py-16 w-full xl:max-w-7xl">
-                <div className="space-y-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="space-y-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3">
                     {/* Brand and contact */}
-                    <div className="space-y-1 sm:col-span-2 lg:col-span-1">
+                    <div className="space-y-1 sm:col-span-2 xl:px-4 xl:col-span-1">
                         <h3 className="font-(family-name:--font-aboreto) text-xl sm:text-2xl font-light text-(--primary-100)">Infinity MK</h3>
                         <p className="mb-2 text-sm leading-relaxed text-(--main-300)">Your premier destination for beauty, relaxation, and exceptional service.</p>
                         <div className="flex justify-center">
@@ -85,7 +85,7 @@ export default function Footer() {
                     </div>
 
                     {/* Social */}
-                    <div className="space-y-1">
+                    <div className="space-y-1 sm:col-span-2 xl:col-span-3 2xl:col-span-1">
                         <h4 className="font-(family-name:--font-aboreto) text-base sm:text-lg font-medium text-(--primary-100)">Stay Connected</h4>
                         <p className="text-sm text-(--main-300)">Follow us for the latest styles and beauty tips.</p>
                         <div className="flex gap-3 p-3 justify-center">
