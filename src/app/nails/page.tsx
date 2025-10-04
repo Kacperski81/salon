@@ -150,12 +150,6 @@ export default function Nails() {
                                             <div className={`xl:px-10 grow p-1 text-left relative text-(--main-900) opacity-0 ${expandedPanel === service.id ? " opacity-100 transition-opacity duration-500 delay-500" : "opacity-0 transition-opacity duration-200 delay-100"}`}>
 
                                                 <table className="w-full border-separate border-spacing-0 border-collapse px-2 lg:px-3 lg:py-2">
-                                                    <thead className="">
-                                                        <tr className="text-(--main-300)">
-                                                            <th className="border-b border-(--main-400) p-1 xl:px-10">Service</th>
-                                                            <th className="text-center border-b border-(--main-400)">Price</th>
-                                                        </tr>
-                                                    </thead>
                                                     <tbody className="">
                                                         {service.items.map((item) => {
                                                             return (

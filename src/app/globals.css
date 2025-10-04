@@ -51,6 +51,13 @@
     --red-200: hsl(0, 65%, 85%);
     --red-300: hsl(0, 80%, 70%);
 
+    /* Service accordion variables */
+    --service-button-small: 2.5rem;
+    --service-panel-padding: 0.75rem;
+    --service-panel-gap: 0.75rem;
+    --service-accordion-button: hsl(0 0% 0% / 0.55);
+    --service-button-padding: 0.40rem;
+
     /* Accordion variables */
     --accordion-button: hsl(0 0% 0% / 0.55);
     --button-small: 0.875rem;
@@ -63,7 +70,7 @@
     --bg-gradient-100: hsl(25, 12%, 75%);
     --bg-gradient-200: hsl(23, 9%, 75%);
     --bg-gradient-300: hsl(24, 11%, 71%);
-    --bg-gradient-400: hsl(27,11%,70%);
+    --bg-gradient-400: hsl(27, 11%, 70%);
     --bg-gradient-500: hsl(25, 14%, 64%);
     --bg-gradient-600: hsl(23, 15%, 63%);
     --bg-gradient-700: hsl(22, 16%, 61%);
@@ -136,7 +143,7 @@ body {
             var(--bg-gradient-600) 50%,
             var(--bg-gradient-700) 60%,
             var(--bg-gradient-800) 70%,
-            )
+        )
 }
 
 .card {
@@ -148,12 +155,42 @@ body {
     background-position-x: center;
 }
 
+.service-panel-opened {
+    flex-basis: clamp(15rem, 40vh, 20rem);
+    flex-grow: 1;
+    transition: flex-basis 500ms, flex-grow 500ms;
+}
+
+.service-panel-closed {
+    flex-basis: calc((var(--service-panel-padding) * 2) + var(--service-button-small));
+    flex-grow: 0;
+    transition: flex-basis 500ms, flex-grow 500ms;
+}
+
+.service-panel-paragraph {
+    margin-left: calc(var(--service-button-small) + var(--service-panel-gap));
+}
+
+@media (max-width: 63.999em) {
+    .service-button-bg::after {
+        content: "";
+        position: absolute;
+        left: calc((var(--service-panel-gap) + var(--service-button-small)) * -1);
+        width: calc(100% + (var(--service-button-small) * 2));
+        height: var(--service-button-small);
+        background: hsl(0 0% 0% / 0.5);
+        z-index: -1;
+        border-radius: 100vw;
+}
+
+}
+
 .panel {
     border-radius: 1rem;
     border: transparent 1px solid;
     background:
         radial-gradient(circle at 50% 250%, var(--main-100), var(--main-100)) padding-box,
-        linear-gradient(var(--primary-100), var(--primary-200)) border-box;    
+        linear-gradient(var(--primary-100), var(--primary-200)) border-box;
 }
 
 .panelV2 {
@@ -165,20 +202,12 @@ body {
     position: relative;
     /* border: 10px solid; */
     /* margin: 0 auto; */
-    
-    > div {
-        /* border: 10px solid; */
-        /* margin: 0 auto; */
-    }
 
-    > div > div {
+
+    >div>div {
         background: hsl(from var(--main-100) hsl / 1);
         backdrop-filter: blur(8px);
 
-    }
-
-    table {
-        /* color: var(--main-100); */
     }
 
     &::before {
@@ -215,11 +244,11 @@ body {
     flex-basis: calc((var(--panel-padding) * 2) + var(--button-small));
     flex-grow: 0;
     transition: flex-basis 500ms, flex-grow 500ms;
-    
+
 }
 
 .image-brightness {
-    filter: brightness(0.8);
+    filter: brightness(0.5);
 
     transition: filter 500ms;
 }
@@ -325,7 +354,7 @@ body {
     /* border-inline-start: 2px solid; */
     /* border-block-start: 2px solid; */
     border: 1px solid;
-    border-image-source: 
+    border-image-source:
         radial-gradient(circle at top left, var(--main-300), var(--main-400));
     border-image-slice: 1;
 }

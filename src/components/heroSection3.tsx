@@ -25,7 +25,7 @@ export default function heroSection3() {
                     <h1 className="leading-[1.3] grow-1 font-(family-name:--font-aboreto) text-4xl lg:text-6xl flex flex-col pt-10 justify-center items-center px-4 xl:px-16">
                         <span className="font-bold text-dark-gradient">FEEL GOOD, </span>
                         <span className="font-bold text-dark-gradient">LOOK AMAZING.</span>
-                        <span className="mt-4 text-lg text-(--main-300) font-bold">{`Step into a world of beauty and relaxation. We're here to make you shine.`}</span>
+                        <span className="mt-4 text-lg text-(--main-200) font-bold">{`Step into a world of beauty and relaxation. We're here to make you shine.`}</span>
                     </h1>
                 </div>
                 <div className="
