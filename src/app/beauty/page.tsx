@@ -228,7 +228,7 @@ export default function Beauty() {
 
                                                                     {treatment.items ? (
                                                                         <div className="grow">
-                                                                            <p className="text-(--main-200) font-bold mb-2">{treatment.treatment}</p>
+                                                                            <p className="text-(--main-50) lg:text-(--main-200) font-bold mb-2">{treatment.treatment}</p>
                                                                             {treatment.items.map((item) => {
                                                                                 return (
                                                                                     <div key={item.name} className="
@@ -238,9 +238,10 @@ export default function Beauty() {
                                                                                         flex 
                                                                                         justify-between 
                                                                                         py-2
-                                                                                        text-(--main-100)">
+                                                                                        text-white
+                                                                                        lg:text-(--main-100)">
                                                                                         <p className="max-w-[40ch]">{item.name}</p>
-                                                                                        <p className="text-(--main-50) whitespace-nowrap">{item.price}</p>
+                                                                                        <p className="text-white lg:text-(--main-50) whitespace-nowrap">{item.price}</p>
                                                                                     </div>
                                                                                 )
                                                                             })}
@@ -251,12 +252,11 @@ export default function Beauty() {
                                                                             border-b-(--main-200)
                                                                             last:border-b-0 
                                                                             grow 
-                                                                            text-(--main-100) 
                                                                             flex 
                                                                             justify-between 
                                                                             items-center">
                                                                             <p className="
-                                                                                text-(--main-100) 
+                                                                                text-(--main-50) lg:text-(--main-100) 
                                                                                 max-w-[50ch]">{treatment.treatment}</p>
                                                                             
                                                                             <div className="flex flex-col items-end whitespace-nowrap">

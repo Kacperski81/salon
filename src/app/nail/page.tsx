@@ -235,8 +235,8 @@ export default function Nails() {
                                                                     xl:text-lg 
                                                                     xl:px-4">
                                                                 <div className="flex justify-between">
-                                                                    <p className="text-(--main-200)">{item.service}</p>
-                                                                    <p className="self-center text-(--main-100)">{item.price}</p>
+                                                                    <p className="text-(--main-100) lg:text-(--main-200)">{item.service}</p>
+                                                                    <p className="self-center text-(--main-50) lg:text-(--main-100)">{item.price}</p>
                                                                 </div>
                                                             </li>
                                                         )

@@ -225,7 +225,7 @@ export default function Hair() {
                                                                     xl:text-lg  
                                                                     xl:px-4">
                                                                 <div className="flex justify-between">
-                                                                    <p className="self-end text-(--main-100) lg:text-(--main-200)">{item.service}</p>
+                                                                    <p className="self-end text-(--main-50) lg:text-(--main-200)">{item.service}</p>
                                                                     <div className="text-white lg:text-(--main-200) flex gap-3 lg:gap-8">
                                                                         {
                                                                             item.price && (
