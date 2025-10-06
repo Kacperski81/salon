@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Border2 } from "@/components/border";
 
 // Define the type for a single price list item
@@ -95,8 +95,6 @@ const priceList: PriceList = [
 
 export default function Beauty() {
     const [expandedPanel, setExpandedPanel] = useState<number>(0);
-    const panelRef = useRef<HTMLDivElement>(null);
-
 
     const togglePanel = (panelId: number) => {
         setExpandedPanel(panelId);
@@ -113,59 +111,165 @@ export default function Beauty() {
             bg-bottom-left
             bg-cover
             bg-no-repeat">
-            <Border2 />
-            <div className="grow flex lg:grid lg:grid-cols-2 xl:px-20">
-                <div className="relative grow flex flex-col lg:col-start-2">
-                    <h3 className="mt-10 font-(family-name:--font-aboreto) self-center pt-3 pb-2 px-10 text-2xl text-(--main-100)">SERVICES</h3>
 
-                    {/* wrapper */}
-                    <div className="panelV2 grow flex justify-center lg:flex-col px-1 pb-2 xl:pb-10">
+            <Border2 />
+
+            <div className="grow flex lg:pb-7">
+
+                <div className="grow flex flex-col lg:items-end">
+                    {/* Heading */}
+                    <h2 className="
+                        mt-10 
+                        font-(family-name:--font-aboreto) 
+                        self-center 
+                        pt-4 
+                        pb-2 
+                        px-10 
+                        text-2xl 
+                        text-(--main-100)
+                        uppercase
+                        tracking-widest">BEAUTY SERVICES</h2>
+
+                    {/* Wrapper */}
+                    <div className="
+                        panelV2 
+                        grow 
+                        flex 
+                        justify-center 
+                        lg:flex-col 
+                        p-4 
+                        xl:pb-10 
+                        2xl:grid 
+                        2xl:grid-cols-5">
 
                         {/* Accordion */}
-                        <div className="grow flex flex-col gap-4 px-2 lg:px-10">
+                        <div className="
+                            grow 
+                            flex 
+                            flex-col 
+                            gap-4 
+                            px-2 
+                            lg:px-10 
+                            md:min-w-[700px] 
+                            max-w-[500px] 
+                            md:max-w-[700px] 
+                            xl:w-[800px] 
+                            xl:max-w-[1000px] 
+                            2xl:col-span-4">
                             {priceList.map((service) => {
                                 return (
                                     // Accordion panel
                                     <div key={service.id}
                                         onClick={() => togglePanel(service.id)}
-                                        className={`border-gradient isolate overflow-hidden relative ${expandedPanel === service.id ? "shadow-xl opened-panel" : "shadow-xl closed-panel cursor-pointer"}`}
-                                        ref={panelRef}
+                                        className={`
+                                            border-gradient 
+                                            isolate 
+                                            overflow-hidden 
+                                            relative 
+                                            rounded-sm 
+                                            ${expandedPanel === service.id ? "shadow-xl opened-panel" : "shadow-xl closed-panel cursor-pointer"}`}
                                     >
 
                                         {/* Accordion heading */}
-                                        <h4 id={`${service.name}-heading`} className="sticky inset-0 z-100 m-0">
+                                        <h3 id={`${service.name}-heading`} className="sticky inset-0 z-100 m-0">
                                             {/* Accordion trigger */}
                                             <button aria-controls={`${service.name}-content`} aria-expanded={service.id === expandedPanel} className={` ${expandedPanel === service.id ? "py-(--panel-padding)" : "py-2 xl:py-1 cursor-pointer"}`}>
                                                 {/* Panel title */}
-                                                <span className="text-6 text-sm xl:text-lg font-bold font-(family-name:--font-aboreto)">{service.name}</span>
+                                                <span className="
+                                                    text-6 
+                                                    text-base 
+                                                    xl:text-lg 
+                                                    font-bold 
+                                                    font-(family-name:--font-aboreto)
+                                                    uppercase
+                                                    tracking-wide">{service.name}</span>
                                             </button>
-                                        </h4>
+                                        </h3>
 
                                         {/* Accordion content */}
-                                        <div id={`${service.name}-content}`} aria-labelledby={`${service.name}-heading`} role="region" aria-hidden={service.id !== expandedPanel} className={`flex justify-center z-10 text-xl ${expandedPanel === service.id ? "" : ""}`}>
-                                            <div className={`xl:px-10 grow p-1 text-left relative text-(--main-900) opacity-0 ${expandedPanel === service.id ? " opacity-100 transition-opacity duration-500 delay-500" : "opacity-0 transition-opacity duration-200 delay-100"}`}>
+                                        <div
+                                            id={`${service.name}-content}`}
+                                            aria-labelledby={`${service.name}-heading`}
+                                            role="region"
+                                            aria-hidden={service.id !== expandedPanel}
+                                            className={`
+                                                flex 
+                                                justify-center 
+                                                z-10 
+                                                text-xl 
+                                                ${expandedPanel === service.id ? "" : ""}`}>
+
+                                            <div className={`
+                                                    grow 
+                                                    p-1 
+                                                    lg:px-6 
+                                                    text-left 
+                                                    relative
+                                                    opacity-0 
+                                                    ${expandedPanel === service.id ? " opacity-100 transition-opacity duration-500 delay-500" : "opacity-0 transition-opacity duration-200 delay-100"}`}>
+
                                                 <ul>
                                                     {service.treatments.map((treatment) => {
                                                         return (
-                                                            <li key={treatment.treatment} className="group p-1 group text-xs md:text-large lg:text-base xl:text-lg block-inline xl:px-10">
-                                                                <div>
+                                                            <li 
+                                                                key={treatment.treatment} 
+                                                                className="
+                                                                    group
+                                                                    border-b 
+                                                                    border-b-(--main-300) 
+                                                                    last:border-b-0 
+                                                                    py-2 
+                                                                    group 
+                                                                    text-sm 
+                                                                    md:text-base 
+                                                                    xl:text-lg
+                                                                    xl:px-4">
+                                                                <div className="flex justify-between">
 
                                                                     {treatment.items ? (
-                                                                        <div>
-                                                                            <h3 className="text-(--main-100)">{treatment.treatment}</h3>
+                                                                        <div className="grow">
+                                                                            <p className="text-(--main-200) font-bold mb-2">{treatment.treatment}</p>
                                                                             {treatment.items.map((item) => {
                                                                                 return (
-                                                                                    <div key={item.name} className="flex justify-between text-(--main-100)">
-                                                                                        <p>{item.name}</p>
-                                                                                        <p>{item.price}</p>
+                                                                                    <div key={item.name} className="
+                                                                                        border-b 
+                                                                                        border-b-(--main-300)
+                                                                                        last:border-b-0
+                                                                                        flex 
+                                                                                        justify-between 
+                                                                                        py-2
+                                                                                        text-(--main-100)">
+                                                                                        <p className="max-w-[40ch]">{item.name}</p>
+                                                                                        <p className="text-(--main-50) whitespace-nowrap">{item.price}</p>
                                                                                     </div>
                                                                                 )
                                                                             })}
                                                                         </div>
                                                                     ) : (
-                                                                        <div className="p-1 text-(--main-100) flex justify-between">
-                                                                            <p className="text-(--main-100)">{treatment.treatment}</p>
-                                                                            <p>{treatment.price}</p>
+                                                                        <div className="
+                                                                            border-b 
+                                                                            border-b-(--main-200)
+                                                                            last:border-b-0 
+                                                                            grow 
+                                                                            text-(--main-100) 
+                                                                            flex 
+                                                                            justify-between 
+                                                                            items-center">
+                                                                            <p className="
+                                                                                text-(--main-100) 
+                                                                                max-w-[50ch]">{treatment.treatment}</p>
+                                                                            
+                                                                            <div className="flex flex-col items-end whitespace-nowrap">
+                                                                                {treatment.price && (
+                                                                                    <p className="text-(--main-50)">{treatment.price}</p>
+                                                                                )}
+                                                                                {treatment.infill && (
+                                                                                    <p className="text-(--main-50) text-xs md:text-sm mt-1">Infill: {treatment.infill}</p>
+                                                                                )}
+                                                                                {treatment.availability && (
+                                                                                    <p className="text-(--main-50) text-xs md:text-sm">{treatment.availability}</p>
+                                                                                )}
+                                                                            </div>
                                                                         </div>
                                                                     )}
 

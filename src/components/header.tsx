@@ -18,7 +18,7 @@ export default function Header() {
                         <Link href="/hair">Hair</Link>
                     </li>
                     <li>
-                        <Link href="/nails">Nails</Link>
+                        <Link href="/nail">Nails</Link>
                     </li>
                     <li>
                         <Link href="/beauty">Beauty</Link>

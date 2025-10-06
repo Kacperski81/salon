@@ -2,6 +2,7 @@
 
 import { JSX, useState } from "react";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import hairBg from "../../public/zd2.jpg";
 import nailsBg from "../../public/mainServicesNails.jpg";
 import beautyBg from "../../public/beautyBg2.jpg";
@@ -114,14 +115,35 @@ export default function Services5() {
 
                                     {/* Accordion content * Panel 1 content */}
                                     <div id={`${service.id}-content`} aria-labelledby={`${service.id}-heading}`} role="region" aria-hidden={service.id !== expandedPanel} className="relative z-10">
-                                        <p className={`service-panel-paragraph text-left relative text-white text-sm lg:text-lg opacity-0 max-w-[70ch]  ${expandedPanel === service.id ? "opacity-100 transition-opacity duration-500 delay-500 translate-y-0 transition-transform duration-100" : "opacity-0 transition-opacity duration-500 delay-500 transition-transform  duration-500"}`}>{service.services[0].description}<span className="block text-right w-full">see more</span></p>
+                                        <p className={`service-panel-paragraph text-left relative text-white text-sm lg:text-lg opacity-0 max-w-[70ch]  ${expandedPanel === service.id ? "opacity-100 transition-opacity duration-500 delay-500 translate-y-0 transition-transform duration-100" : "opacity-0 transition-opacity duration-500 delay-500 transition-transform  duration-500"}`}>
+                                            {service.services[0].description}
+                                            {/* <span className="block text-right w-full">see more</span> */}
+                                            <span className="block text-right mt-2">
+                                                <Link
+                                                    href={`/${service.id}`} // The internal route
+                                                    aria-label={`View all ${service.name} services`}
+                                                    className={`w-fit border border-white text-white px-5 py-2 rounded-full uppercase text-xs font-medium tracking-widest transition-all duration-300 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white/50
+                                                ${expandedPanel === service.id
+                                                            ? "opacity-100 translate-y-0 transition-all duration-500 delay-700"
+                                                            : "opacity-0 translate-y-2 transition-all duration-300"
+                                                        }`}
+                                                >
+                                                    See More
+                                                </Link>
+                                            </span>
+                                        </p>
                                     </div>
                                     <Image
                                         src={service.image}
                                         alt={`${service.name} service image`}
                                         fill
                                         sizes="100vw"
-                                        className={`-z-1 object-cover ${expandedPanel === service.id ? "image-brightness" : "image-brightness-light"}`}
+                                        className={`
+                                            -z-1 
+                                            object-cover 
+                                            ${expandedPanel === service.id ?
+                                                "image-brightness"
+                                                : "image-brightness-light"}`}
                                     />
                                 </div>
                             )

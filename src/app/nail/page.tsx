@@ -3,106 +3,117 @@
 import { useState } from "react";
 import { Border2 } from "@/components/border";
 
-// Define the type for a treatment item
-type hairServiceItem = {
-    service: string;
-    price?: string;
-    short_hair_price?: string;
-    medium_hair_price?: string;
-    long_hair_price?: string | null;
-};
-
-// Define the type for a main section category
-type HairServiceCategory = {
-    id: string;
+type nailsServiceData = {
+    id: number;
     name: string;
-    items: hairServiceItem[];
-};
+    items: {
+        service: string;
+        price: string
+    }[];
+}
 
-// Define the type for the entire price list object
-type HairServicesData = HairServiceCategory[];
-
-// This static data is now defined outside the component, which is a common best practice.
-const hairServicesData: HairServicesData = [
+const nailsServiceData: nailsServiceData[] = [
     {
-        "id": "cut-and-style",
-        "name": "Cut & Style",
-        "items": [
-            { "service": "Ladies' Haircut", "price": "£70" },
-            { "service": "Ladies' Restyle", "price": "£75" },
-            { "service": "Gents Haircut", "price": "£46" },
-            { "service": "Under 10 Years Old Girls", "price": "From £15" },
-            { "service": "11 to 16 Years Old Girls", "price": "£35" },
-            { "service": "11 to 16 Years Old Boys", "price": "£28" },
-            { "service": "Blow Dry Short Hair", "price": "£35" },
-            { "service": "Blow Dry Medium Hair", "price": "£38" },
-            { "service": "Blow Dry Long Hair", "price": "From £42" },
-            { "service": "Hair Up / Wedding Hair", "price": "From £75" }
-        ]
-    },
-    {
-        "id": "colouring",
-        "name": "Colouring",
-        "items": [
-            { "service": "Full Head Of Highlights or Balayage", "price": "£130" },
-            { "service": "3/4 Head Of Highlights or Balayage", "price": "£120" },
-            { "service": "1/2 Head Of Highlights or Balayage", "price": "£100" },
-            { "service": "Single Foils (t-sections)", "price": "From £50" },
-            { "service": "Full Head Tint", "price": "£70" },
-            { "service": "Re-growth Tint", "price": "£55" },
-            { "service": "Glossing (Semi Permanent)", "price": "£55" },
-            { "service": "Full Head Bleach (Toner included)", "price": "£110" },
-            { "service": "Re-growth Bleach (Toner included)", "price": "£90" },
-            { "service": "Men's Grey Blending", "price": "£25" },
-            { "service": "Toner", "price": "From £25" }
-        ]
-    },
-    {
-        "id": "texturing-and-straightening",
-        "name": "Texturing & Straightening",
+        "id": 0,
+        "name": "Manicure",
         "items": [
             {
-                "service": "Perm",
-                "short_hair_price": "£80",
-                "medium_hair_price": "£90",
-                "long_hair_price": null
+                "service": "Hard Gel Extensions",
+                "price": "£46"
             },
             {
-                "service": "Brazilian Blow Dry/Keratin treatment",
-                "short_hair_price": "£120",
-                "medium_hair_price": "£160",
-                "long_hair_price": "£190"
+                "service": "Infill (Gel or Protein Base)",
+                "price": "£38"
+            },
+            {
+                "service": "Nail Art (per finger)",
+                "price": "£2"
+            },
+            {
+                "service": "Broken Nail Repair (Extensions - Hands or Feet)",
+                "price": "£5"
+            },
+            {
+                "service": "Full Manicure (Protein Base, Shellac Color, Cuticle & Skin Treatment)",
+                "price": "£46"
+            },
+            {
+                "service": "Full Manicure (Shellac Color, Cuticle & Skin Treatment)",
+                "price": "£40"
+            },
+            {
+                "service": "Full Manicure (Normal Varnish, Cuticle & Skin Treatment)",
+                "price": "£28"
+            },
+            {
+                "service": "Manicure Tidy Up (Protein Base & Shellac Color)",
+                "price": "£38"
+            },
+            {
+                "service": "Manicure Tidy Up (Shellac Color Only)",
+                "price": "£30"
+            },
+            {
+                "service": "Manicure Tidy Up (Normal Varnish Color Only)",
+                "price": "£15"
             }
         ]
     },
     {
-        "id": "treatments",
-        "name": "Treatments",
+        "id": 1,
+        "name": "Pedicure",
         "items": [
-            { "service": "Fusio Dose (Kerastase)", "price": "£20" },
-            { "service": "Power-Mix (L'Oreal)", "price": "£15" },
-            { "service": "Olaplex", "price": "£40" }
+            {
+                "service": "Full Pedicure (Shellac Color, Hard Skin Removal, Treatment)",
+                "price": "£46"
+            },
+            {
+                "service": "Full Pedicure (Normal Varnish Color, Hard Skin Removal Treatment)",
+                "price": "£32"
+            },
+            {
+                "service": "Pedicure Tidy Up (Shellac Color)",
+                "price": "£32"
+            },
+            {
+                "service": "Pedicure Tidy Up (Normal Varnish)",
+                "price": "£15"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Additional Services",
+        "items": [
+            {
+                "service": "Shellac Removal",
+                "price": "£10"
+            },
+            {
+                "service": "Paraffin Treatment",
+                "price": "£5"
+            }
         ]
     }
 ];
 
-export default function Hair() {
-    const [expandedPanel, setExpandedPanel] = useState<string>("cut-and-style");
+export default function Nails() {
+    const [expandedPanel, setExpandedPanel] = useState<number>(0);
 
-    const togglePanel = (panelId: string) => {
+    const togglePanel = (panelId: number) => {
         setExpandedPanel(panelId);
     }
 
     return (
         <section className="
             text-center 
-            grow-1 
+            grow-1
             flex 
-            bg-(--main-200) 
-            bg-[url(../../public/hairServicesBg.jpg)]
-            bg-blend-multiply 
-            bg-left-top 
-            bg-cover 
+            bg-(--main-300)
+            bg-[url(../../public/nailsBgFlowers.jpg)]
+            bg-blend-multiply
+            bg-center-top
+            bg-cover
             bg-no-repeat">
 
             <Border2 />
@@ -119,22 +130,21 @@ export default function Hair() {
                         pb-2 
                         px-10 
                         text-2xl 
-                        text-(--main-100)
-                        uppercase
-                        tracking-widest">HAIR SERVICES</h2>
+                        text-(--main-100) 
+                        uppercase 
+                        tracking-widest">NAIL SERVICES</h2>
 
-                    {/* Wrapper */}
+                    {/* wrapper */}
                     <div className="
                         panelV2 
                         grow 
                         flex 
                         justify-center 
-                        lg:flex-col 
-                        p-4 
+                        lg:flex-col
+                        p-4   
                         xl:pb-10 
                         2xl:grid 
                         2xl:grid-cols-5">
-                            
 
                         {/* Accordion */}
                         <div className="
@@ -150,18 +160,18 @@ export default function Hair() {
                             xl:w-[800px] 
                             xl:max-w-[1000px] 
                             2xl:col-span-4">
-                            {hairServicesData.map((service) => {
+                            {nailsServiceData.map((service) => {
                                 return (
                                     // Accordion panel
-                                    <div
+                                    <div 
                                         key={service.id}
                                         onClick={() => togglePanel(service.id)}
                                         className={`
-                                            border-gradient 
+                                            border-gradient
                                             isolate 
                                             overflow-hidden 
-                                            relative
-                                            rounded-sm
+                                            relative 
+                                            rounded-sm 
                                             ${expandedPanel === service.id ? "shadow-xl opened-panel" : "shadow-xl closed-panel cursor-pointer"}`}
                                     >
 
@@ -203,7 +213,7 @@ export default function Hair() {
                                             <div className={`
                                                     grow 
                                                     p-1 
-                                                    lg:px-6 
+                                                    xl:px-6 
                                                     text-left 
                                                     relative
                                                     opacity-0 
@@ -219,48 +229,28 @@ export default function Hair() {
                                                                     border-b 
                                                                     border-b-(--main-300) 
                                                                     last:border-b-0 
-                                                                    p-2  
+                                                                    p-2
                                                                     text-sm 
                                                                     md:text-base 
-                                                                    xl:text-lg  
+                                                                    xl:text-lg 
                                                                     xl:px-4">
                                                                 <div className="flex justify-between">
-                                                                    <p className="self-end text-(--main-200)">{item.service}</p>
-                                                                    <div className="text-(--main-200) flex gap-3 lg:gap-8">
-                                                                        {
-                                                                            item.price && (
-                                                                                <p className=""><span className="text-(--main-100)">{item.price}</span></p>
-                                                                            )
-                                                                        }
-                                                                        {
-                                                                            item.short_hair_price && (
-                                                                                <p>Short <span className="flex flex-col gap- text-(--main-100) text-right">{item.short_hair_price}</span></p>
-                                                                            )
-                                                                        }
-                                                                        {
-                                                                            item.medium_hair_price && (
-                                                                                <p>Medium <span className="flex flex-col text-(--main-100) text-right">{item.medium_hair_price}</span></p>
-                                                                            )
-                                                                        }
-                                                                        {
-                                                                            item.long_hair_price && (
-                                                                                <p>Long <span className="flex flex-col text-(--main-100) text-right">{item.long_hair_price}</span></p>
-                                                                            )
-                                                                        }
-                                                                    </div>
+                                                                    <p className="text-(--main-200)">{item.service}</p>
+                                                                    <p className="self-center text-(--main-100)">{item.price}</p>
                                                                 </div>
                                                             </li>
                                                         )
                                                     })}
                                                 </ul>
                                             </div>
+
                                         </div>
                                     </div>
                                 )
-                            }
-                            )}
+                            })}
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>

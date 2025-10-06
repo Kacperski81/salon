@@ -41,7 +41,7 @@ export default function Footer() {
                                 <Link href="/hair" className={`transition-colors duration-300 ${isFooterLinkActive("/hair") ? "text-[#B8860B] font-semibold" : "hover:text-[#B8860B]"} ${isFooterLinkActive("/hair") ? "text-(--main-100)" : "text-(--main-300)"}`}>Hair Services</Link>
                             </li>
                             <li>
-                                <Link href="/nails" className={`transition-colors duration-300 ${isFooterLinkActive("/nails") ? "text-[#B8860B] font-semibold" : "hover:text-[#B8860B]"} ${isFooterLinkActive("/nails") ? "text-(--main-100)" : "text-(--main-300)"}`}>Nails Services</Link>
+                                <Link href="/nail" className={`transition-colors duration-300 ${isFooterLinkActive("/nails") ? "text-[#B8860B] font-semibold" : "hover:text-[#B8860B]"} ${isFooterLinkActive("/nails") ? "text-(--main-100)" : "text-(--main-300)"}`}>Nails Services</Link>
                             </li>
                             <li>
                                 <Link href="/beauty" className={`transition-colors duration-300 ${isFooterLinkActive("/beauty") ? "text-[#B8860B] font-semibold" : "hover:text-[#B8860B]"} ${isFooterLinkActive("/beauty") ? "text-(--main-100)" : "text-(--main-300)"}`}>Beauty Treatments</Link>
