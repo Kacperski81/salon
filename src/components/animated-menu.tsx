@@ -90,7 +90,7 @@ export default function AnimatedMenu() {
                 Hair
               </Link>
               <Link
-                href="/nails"
+                href="/nail"
                 onClick={handleLinkClick}
                 className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/nails") ? "text-(--main-100) font-semibold" : "text-(--main-200) hover:text-(--main-100)"
                   }`}

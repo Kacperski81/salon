@@ -218,7 +218,7 @@ export default function Beauty() {
                                                                     border-b 
                                                                     border-b-(--main-300) 
                                                                     last:border-b-0 
-                                                                    py-2 
+                                                                    p-2 
                                                                     group 
                                                                     text-sm 
                                                                     md:text-base 
