@@ -225,26 +225,26 @@ export default function Hair() {
                                                                     xl:text-lg  
                                                                     xl:px-4">
                                                                 <div className="flex justify-between">
-                                                                    <p className="self-end text-(--main-200)">{item.service}</p>
-                                                                    <div className="text-(--main-200) flex gap-3 lg:gap-8">
+                                                                    <p className="self-end text-(--main-100) lg:text-(--main-200)">{item.service}</p>
+                                                                    <div className="text-white lg:text-(--main-200) flex gap-3 lg:gap-8">
                                                                         {
                                                                             item.price && (
-                                                                                <p className=""><span className="text-(--main-100)">{item.price}</span></p>
+                                                                                <p className=""><span className="text-white lg:text-(--main-100)">{item.price}</span></p>
                                                                             )
                                                                         }
                                                                         {
                                                                             item.short_hair_price && (
-                                                                                <p>Short <span className="flex flex-col gap- text-(--main-100) text-right">{item.short_hair_price}</span></p>
+                                                                                <p>Short <span className="flex flex-col text-white lg:text-(--main-100) text-right">{item.short_hair_price}</span></p>
                                                                             )
                                                                         }
                                                                         {
                                                                             item.medium_hair_price && (
-                                                                                <p>Medium <span className="flex flex-col text-(--main-100) text-right">{item.medium_hair_price}</span></p>
+                                                                                <p>Medium <span className="flex flex-col text-white lg:text-(--main-100) text-right">{item.medium_hair_price}</span></p>
                                                                             )
                                                                         }
                                                                         {
                                                                             item.long_hair_price && (
-                                                                                <p>Long <span className="flex flex-col text-(--main-100) text-right">{item.long_hair_price}</span></p>
+                                                                                <p>Long <span className="flex flex-col text-white lg:text-(--main-100) text-right">{item.long_hair_price}</span></p>
                                                                             )
                                                                         }
                                                                     </div>
