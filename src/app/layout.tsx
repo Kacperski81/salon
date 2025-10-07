@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { Aboreto, Lato, Red_Hat_Text } from "next/font/google";
 import { Logo3 } from "@/components/logo";
 import "./globals.css";
-// import Footer from "@/components/footer";
-// import Hamburger from "@/components/hamburger";
 import AnimatedMenu from "@/components/animated-menu";
-// import Border from "@/components/border";
 const aboreto = Aboreto({
   variable: "--font-aboreto",
   subsets: ['latin'],
