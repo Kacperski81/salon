@@ -149,13 +149,13 @@ export default function Treatments() {
                                                 text-left
                                                 ${expandedPanel === treatment.name ? "opacity-100" : "opacity-0"}`}>
                                             <div className="space-y-4">
-                                                <div className="flex justify-between items-baseline border-b border-white/10 pb-2">
-                                                    <h4 className="text-xl font-semibold text-(--main-100)">{treatment.name}</h4>
-                                                    <p className="text-xl font-bold text-white">{treatment.price}</p>
+                                                <div className="flex justify-between items-baseline border-b border-white/10 pb-2 text-sm md:text-base xl:text-lg">
+                                                    <h4 className="text-(--main-100)">{treatment.name}</h4>
+                                                    <p className="font-semibold text-white">{treatment.price}</p>
                                                 </div>
                                                 <p className="mx-auto text-sm md:text-base text-(--main-50) md:text-(--main-100) leading-relaxed max-w-[70ch]">{treatment.description}</p>
                                             </div>
-            
+
                                         </div>
                                     </div>
                                 )
