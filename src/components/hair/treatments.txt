@@ -1,0 +1,15 @@
+Name: "Davines"
+Description: "Whether you crave a deeply nourishing treatment, scalp revitalisation, or a personalised hair care plan, our Davines NaturalTech Tailored Treatments promise to leave you feeling refreshed, rejuvenated, and ready to flaunt your radiant, beautiful hair. Experience this transformative journey at our salon today and unlock the true potential of your hair."
+Price: "£40"
+
+Name: "Kerastase"
+Description: "The ultimate quick-fix problem solver for all hair types, Fusio-Dose is the innovative in-salon treatment that nurses your hair back to health, no matter the starting point. Focused not only on helping your hair look better, the system is designed to actually boost the health of your hair, utilising the kind of active ingredients you’d expect to read on the labels of your hi-tech skincare."
+Price: "£40"
+
+Name: "Metal Detox Loreal"
+Description: "Metal Detox is a haircare innovation powered by Glicoamine. The patented technology helps to neutralize (de-activate) these excess copper metals in the hair, helping to prevent them from interfering with the colouring process. This pre-colour treatment creates the perfect clean canvas for optimal colour results, by neutralizing metal inside the hair before any colour service. Colour results are true to tone, bright, and there is up to 87% less breakage."
+Price: "£40"
+
+Name: "Rebirth"
+Description: "Sortick Rebirth No1 Hair Protective Care Liquid For Bleaching And Coloring - Nourishes And Protects Hair. We are using Sortick Rebirth No1 protective care liquid during colour service. Specifically designed to work in harmony with hair bleach and dye, minimizing damage and ensuring your hair remains healthy and strong."
+Price: "£40"
