@@ -102,6 +102,8 @@ export default function Beauty() {
 
     return (
         <section className="
+            min-h-[100dvh]
+            xl:min-h-screen
             text-center 
             grow-1 
             flex 

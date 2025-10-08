@@ -9,9 +9,9 @@ export default function Hair() {
 
             <Border2 />
 
-                <Services />
-                <Treatments />
-                <Footer />
+            <Services />
+            <Treatments />
+            <Footer />
 
 
         </div>

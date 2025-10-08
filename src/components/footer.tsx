@@ -14,7 +14,7 @@ export default function Footer() {
 
     return (
         // <footer id="footer" className="snap-center sticky top-0 bg-(--main-800) min-h-screen py-2 sm:py-10 flex items-center z-50">
-        <footer id="footer" className="snap-center bg-(--main-800) min-h-screen py-2 sm:py-10 flex items-center">
+        <footer id="footer" className="text-center snap-center bg-(--main-800) min-h-[100dvh] xl:min-h-screen py-2 sm:py-10 flex items-center">
             {/* container */}
             <div className="container mx-auto py-2 px-4 md:py-16 w-full xl:max-w-7xl">
                 <div className="space-y-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3">

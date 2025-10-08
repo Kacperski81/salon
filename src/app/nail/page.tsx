@@ -106,6 +106,8 @@ export default function Nails() {
 
     return (
         <section className="
+            min-h-[100dvh]
+            xl:min-h-screen
             text-center 
             grow-1
             flex 

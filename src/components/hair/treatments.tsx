@@ -42,7 +42,8 @@ export default function Treatments() {
         <section className="
             snap-start
             snap-always
-            min-h-screen
+            min-h-[100dvh] 
+            xl:min-h-screen
             text-center 
             grow-1 
             flex 
