@@ -87,8 +87,9 @@ export default function Services() {
     return (
         <section className="
             snap-start 
-            snap-always 
-            min-h-screen
+            snap-always
+            min-h-[100dvh] 
+            xl:min-h-screen
             text-center 
             grow-1 
             flex 
@@ -99,7 +100,7 @@ export default function Services() {
             bg-cover 
             bg-no-repeat">
 
-            <Border2 />
+            {/* <Border2 /> */}
 
             <div className="grow flex lg:pb-7">
 
