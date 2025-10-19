@@ -14,7 +14,7 @@ export default function Hair() {
     },[])
 
     return (
-        <div className="snap-y snap-proximity grow flex flex-col">
+        <div className="grow flex flex-col">
 
             <Border2 />
             <Services />
