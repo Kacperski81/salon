@@ -120,7 +120,7 @@ export default function Services5() {
                                             {/* <span className="block text-right w-full">see more</span> */}
                                             <span className="block text-right mt-2">
                                                 <Link
-                                                    href={`/${service.id}`} // The internal route
+                                                    href={`/${service.id}#hair-snap-start`} // The internal route
                                                     aria-label={`View all ${service.name} services`}
                                                     className={`w-fit border border-white text-white px-5 py-2 rounded-full uppercase text-xs font-medium tracking-widest transition-all duration-300 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white/50
                                                 ${expandedPanel === service.id

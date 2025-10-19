@@ -85,7 +85,7 @@ export default function Services() {
     }
 
     return (
-        <section className="
+        <section id="hair-snap-start" className="
             snap-start
             min-h-dvh
             xl:min-h-screen
