@@ -1,5 +1,5 @@
 import { Border2 } from "@/components/border";
-import Carousel from "@/components/carousel";
+// import Carousel from "@/components/carousel";
 import Footer from "@/components/footer";
 import Services from "@/components/hair/services";
 import Treatments from "@/components/hair/treatments";

@@ -81,7 +81,7 @@ export default function Services5() {
 
     return (
         // <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
-        <section id="services" className="snap-start snap-always bg-(--main-400) min-h-[100dvh] xl:min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
+        <section id="services" className="snap-start bg-(--main-400) min-h-[100dvh] xl:min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
             <div className="grow flex flex-col lg:justify-center gap-3">
                 <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-2xl sm:text-3xl lg:text-4xl mt-8 xl:mt-5 font-light">Our Services</h2>
                 <p className="leading-relaxed text-base sm:text-lg md:text-xl text-(--main-200)">
@@ -120,7 +120,7 @@ export default function Services5() {
                                             {/* <span className="block text-right w-full">see more</span> */}
                                             <span className="block text-right mt-2">
                                                 <Link
-                                                    href={`/${service.id}#hair-snap-start`} // The internal route
+                                                    href={`/${service.id}`} // The internal route
                                                     aria-label={`View all ${service.name} services`}
                                                     className={`w-fit border border-white text-white px-5 py-2 rounded-full uppercase text-xs font-medium tracking-widest transition-all duration-300 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white/50
                                                 ${expandedPanel === service.id
