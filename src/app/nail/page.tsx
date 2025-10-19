@@ -7,7 +7,7 @@ import Services from "@/components/nail/services";
 export default function Nails() {
 
     return (
-        <div className="grow flex flex-col">
+        <div className="grow flex flex-col snap-y snap-proximity">
             <Border2 />
             <Services />
             {/* <Carousel3 /> */}

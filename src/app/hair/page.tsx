@@ -6,7 +6,7 @@ import Treatments from "@/components/hair/treatments";
 
 export default function Hair() {
     return (
-        <div className="grow flex flex-col">
+        <div className="grow flex flex-col snap-y snap-proximity">
 
             <Border2 />
             <Services />
