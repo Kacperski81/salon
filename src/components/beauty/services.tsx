@@ -104,7 +104,7 @@ export default function Beauty() {
     return (
         <section className="
             snap-start
-            min-h-[100dvh]
+            min-h-dvh
             xl:min-h-screen
             text-center 
             grow-1 
@@ -115,8 +115,6 @@ export default function Beauty() {
             bg-bottom-left
             bg-cover
             bg-no-repeat">
-
-            <Border2 />
 
             <div className="grow flex lg:pb-7">
 

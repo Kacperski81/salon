@@ -5,16 +5,16 @@ import { Border2 } from "@/components/border";
 import Footer from "@/components/footer";
 import Services from "@/components/hair/services";
 import Treatments from "@/components/hair/treatments";
-import {useLayoutEffect} from "react";
+import {useEffect} from "react";
 
 export default function Hair() {
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0);
     },[])
 
     return (
-        <div className="grow flex flex-col snap-y snap-start snap-always snap-proximity">
+        <div className="snap-y snap-start snap-always snap-proximity scroll-mt-1 grow flex flex-col">
 
             <Border2 />
             <Services />

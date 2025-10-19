@@ -88,6 +88,8 @@ export default function Services() {
         <section className="
             snap-start
             snap-always
+            snap-y
+            scroll-mt-1
             min-h-dvh
             xl:min-h-screen
             text-center 
