@@ -52,6 +52,7 @@ export default function Treatments() {
             bg-right-top 
             bg-cover 
             bg-no-repeat">
+                
             <div className="grow flex lg:pb-7">
 
                 <div className="grow flex flex-col lg:items-end">

@@ -10,7 +10,7 @@ export default function Hair() {
 
             <Border2 />
             <Services />
-            {/* <Treatments /> */}
+            <Treatments />
             {/* <Carousel /> */}
             <Footer />
         </div>
