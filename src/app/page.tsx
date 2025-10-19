@@ -8,7 +8,7 @@ import Services5 from "@/components/services";
 export default function Home() {
 
   return (
-    <div className="snap-y snap-proximity text-center flex flex-col gap-8 bg-(--main-400) relative">
+    <div className="text-center flex flex-col gap-8 bg-(--main-400) relative">
       <HeroSection3 />
       <AboutUs />
       <Services5 />

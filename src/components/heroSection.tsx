@@ -9,6 +9,8 @@ export default function heroSection3() {
             <section className="snap-start snap-always min-h-screen lg:grid lg:grid-cols-2">
                 {/* <div className="relative min-h-screen flex bg-(--main-200) bg-[url(../../public/bg-no-picture.png)] bg-blend-multiply bg-cover bg-center bg-no-repeat"> */}
                 <div className="
+                    snap-start
+                    snap-always
                     min-h-[100dvh]
                     lg:min-h-screen
                     bg-white 
