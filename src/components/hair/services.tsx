@@ -87,8 +87,6 @@ export default function Services() {
     return (
         <section id="hair-snap-start" className="
             snap-start
-            snap-always
-            scroll-mt-1
             min-h-dvh
             xl:min-h-screen
             text-center 
