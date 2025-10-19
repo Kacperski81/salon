@@ -360,3 +360,9 @@ body {
         radial-gradient(circle at top left, var(--main-300), var(--main-400));
     border-image-slice: 1;
 }
+
+/* Carousel */
+
+.carousel {
+    
+}

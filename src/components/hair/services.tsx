@@ -28,15 +28,15 @@ const hairServicesData: HairServicesData = [
         "id": "cut-and-style",
         "name": "Cut & Style",
         "items": [
-            { "service": "Ladies' Haircut", "price": "£70" },
-            { "service": "Ladies' Restyle", "price": "£75" },
-            { "service": "Gents Haircut", "price": "£46" },
-            { "service": "Under 10 Years Old Girls", "price": "From £15" },
-            { "service": "11 to 16 Years Old Girls", "price": "£35" },
-            { "service": "11 to 16 Years Old Boys", "price": "£28" },
+            { "service": "Ladies' Haircut", "price": "£75" },
+            { "service": "Ladies' Restyle", "price": "£85" },
+            { "service": "Gents Haircut", "price": "£53" },
+            { "service": "Kids Under 10 Years Old", "price": "From £20" },
+            { "service": "Kids 11 to 16 Years Old", "price": "From £30" },
             { "service": "Blow Dry Short Hair", "price": "£35" },
-            { "service": "Blow Dry Medium Hair", "price": "£38" },
-            { "service": "Blow Dry Long Hair", "price": "From £42" },
+            { "service": "Blow Dry Medium Hair", "price": "£40" },
+            { "service": "Blow Dry Long Hair", "price": "From £45" },
+            { "service": "Rough Blow Dry", price: "£20"},
             { "service": "Hair Up / Wedding Hair", "price": "From £75" }
         ]
     },
@@ -44,13 +44,13 @@ const hairServicesData: HairServicesData = [
         "id": "colouring",
         "name": "Colouring",
         "items": [
-            { "service": "Full Head Of Highlights or Balayage", "price": "£130" },
+            { "service": "Full Head Of Highlights or Balayage", "price": "£140" },
             { "service": "3/4 Head Of Highlights or Balayage", "price": "£120" },
             { "service": "1/2 Head Of Highlights or Balayage", "price": "£100" },
             { "service": "Single Foils (t-sections)", "price": "From £50" },
             { "service": "Full Head Tint", "price": "£70" },
-            { "service": "Re-growth Tint", "price": "£55" },
-            { "service": "Glossing (Semi Permanent)", "price": "£55" },
+            { "service": "Re-growth Tint", "price": "£60" },
+            { "service": "Glossing (Semi Permanent)", "price": "£60" },
             { "service": "Full Head Bleach (Toner included)", "price": "£110" },
             { "service": "Re-growth Bleach (Toner included)", "price": "£90" },
             { "service": "Men's Grey Blending", "price": "£25" },
@@ -86,9 +86,8 @@ export default function Services() {
 
     return (
         <section className="
-            snap-start 
-            snap-always
-            min-h-[100dvh] 
+            snap-start
+            min-h-dvh
             xl:min-h-screen
             text-center 
             grow-1 
