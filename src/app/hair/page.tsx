@@ -1,3 +1,5 @@
+"use client"
+
 import { Border2 } from "@/components/border";
 // import Carousel from "@/components/carousel";
 import Footer from "@/components/footer";
