@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 
 export default function Beauty() {
     return (
-        <div className="grow flex flex-col snap-y snap-mandatory">
+        <div className="grow flex flex-col snap-y snap-proximity">
             <Border2 />
             <Services />
             <Footer />
