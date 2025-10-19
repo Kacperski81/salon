@@ -85,7 +85,7 @@ export default function Services() {
     }
 
     return (
-        <section className="
+        <section id="hair" className="
             snap-start
             snap-always
             snap-y
