@@ -11,11 +11,13 @@ export type CarouselItem = {
 
 type Props = {
     items: CarouselItem[];
+    item: CarouselItem;
 }
 
-export default function Carousel3({ items }: Props) {
+export default function LightBoxCarousel({ items, item }: Props) {
+    const initialIndex = items.findIndex(i => i.id === item.id);
     const [isSliderEnd, setIsSliderEnd] = useState<boolean>(false)
-    const [selectedIndex, setSelectedIndex] = useState<number>(1);
+    const [selectedIndex, setSelectedIndex] = useState<number>(initialIndex);
     const [containerDimensions, setContainerDimensions] = useState<{ width: number, height: number }>({ width: 0, height: 0 });
     const imageRef = useRef<HTMLImageElement>(null);
 
@@ -67,46 +69,23 @@ export default function Carousel3({ items }: Props) {
 
     useEffect(() => {
         const initialDims = getImageSize();
+        toggleTransition();
         console.log(initialDims)
     }, []);
 
 
     return (
-        <section className="
-            snap-start
-            min-h-dvh 
-            xl:min-h-screen 
-            grow-1
-            flex
-            px-2
-            flex-col 
-            bg-(--main-400)
-            mt-10
-            items-center
-            ">
-            {/* Heading */}
-            <h2 className="
-                mx-auto           
-                font-(family-name:--font-aboreto) 
-                self-center
-                justify-self-start  
-                px-10
-                pb-10 
-                text-2xl 
-                text-(--main-100) 
-                uppercase
-                tracking-widest">GALLERY
-            </h2>
+        <section className="">
 
             {/* Carousel container */}
-            <div className="min-w-[300px] h-auto mx-auto overflow-clip relative shadow-xl">
+            <div className="w-[550px] h-auto mx-auto overflow-clip relative shadow-xl">
 
                 {/* Carousel slide */}
                 <div className="w-full h-full flex" style={getCarouselStyle()} onTransitionEnd={handleTransitionEnd}>
                     {items.map((item) => {
                         return (
                             <img key={item.id} ref={imageRef} src={item.imageUrl} alt={item.alt} />
-
+                                
                         )
                     })}
                 </div>

@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth xl:snap-y xl:snap-proximity">
       <body className={`${aboreto.variable} ${lato.variable} ${redHatText.variable} font-sans antialiased`}>
         <AnimatedMenu />
         <Logo3 />

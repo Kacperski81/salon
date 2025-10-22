@@ -135,7 +135,7 @@ export function Border2() {
   // This component draws a seamless, double-line border around the
   // left half of the screen on large desktops (xl breakpoint).
   return (
-    <div className="m-4 hidden lg:block fixed inset-0 pointer-events-none">
+    <div className="z-2 m-4 hidden lg:block fixed inset-0 pointer-events-none">
       {/* The single SVG element now contains two paths to create the
         double-line effect with connected corners.
       */}

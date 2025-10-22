@@ -65,7 +65,7 @@ const serviceData: ServiceData[] = [
         services: [
             {
                 name: "Products",
-                description: "Rejuvenating facials, waxing, and makeup services to enhance your natural beauty.",
+                description: "Discover the full range of Davines products, featuring sustainable haircare, crafted with natural ingredients for exceptional results and environmental responsibility.",
                 icon: <ProductsSVG className="text-(--main-50)" />,
             }
         ]
@@ -118,7 +118,7 @@ export default function Services5() {
                                         <p className={`service-panel-paragraph text-left relative text-white text-sm lg:text-lg opacity-0 max-w-[70ch]  ${expandedPanel === service.id ? "opacity-100 transition-opacity duration-500 delay-500 translate-y-0 transition-transform duration-100" : "opacity-0 transition-opacity duration-500 delay-500 transition-transform  duration-500"}`}>
                                             {service.services[0].description}
                                             {/* <span className="block text-right w-full">see more</span> */}
-                                            <span className="block text-right mt-2">
+                                            {service.id === "products" ? "" : <span className="block text-right mt-2">
                                                 <Link
                                                     href={`/${service.id}`} // The internal route
                                                     aria-label={`View all ${service.name} services`}
@@ -130,7 +130,7 @@ export default function Services5() {
                                                 >
                                                     See More
                                                 </Link>
-                                            </span>
+                                            </span>}
                                         </p>
                                     </div>
                                     <Image
