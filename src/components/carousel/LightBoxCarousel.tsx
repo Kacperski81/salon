@@ -91,6 +91,7 @@ export default function LightBoxCarousel({ items, item }: Props) {
 
     // ensure we re-measure when images load (handles slow network / first paint)
     useEffect(() => {
+        toggleTransition();
         const imgs = containerRef.current?.querySelectorAll('img') ?? [];
         const onLoad = () => getImageSize();
         imgs.forEach(img => img.addEventListener('load', onLoad));
