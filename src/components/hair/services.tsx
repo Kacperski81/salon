@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { Border2 } from "@/components/border";
+// import { Border2 } from "@/components/border";
 
 // Define the type for a treatment item
 type hairServiceItem = {

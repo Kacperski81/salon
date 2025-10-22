@@ -71,7 +71,7 @@ export default function LightBoxCarousel({ items, item }: Props) {
         const initialDims = getImageSize();
         toggleTransition();
         console.log(initialDims)
-    }, []);
+    }, [getImageSize]);
 
 
     return (
