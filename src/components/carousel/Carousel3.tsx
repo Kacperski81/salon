@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useCallback, useRef } from "react";
 import { ArrowBigRight, ArrowBigLeft } from "lucide-react";
 
 export type CarouselItem = {
@@ -17,7 +17,7 @@ export default function Carousel3({ items }: Props) {
     const [isSliderEnd, setIsSliderEnd] = useState<boolean>(false)
     const [selectedIndex, setSelectedIndex] = useState<number>(1);
     const [containerDimensions, setContainerDimensions] = useState<{ width: number, height: number }>({ width: 0, height: 0 });
-    const imageRef = useRef<HTMLImageElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     // navigation
     const navigate = (number: 1 | -1) => {
@@ -27,9 +27,10 @@ export default function Carousel3({ items }: Props) {
     }
 
     const getImageSize = useCallback(() => {
-        if (imageRef.current) {
-            const width = imageRef.current.offsetWidth;
-            const height = imageRef.current.offsetHeight;
+        const el = containerRef.current
+        if (el) {
+            const width = el.offsetWidth;
+            const height = el.offsetHeight;
             setContainerDimensions({ width, height });
             return { width, height }
         }
@@ -65,10 +66,39 @@ export default function Carousel3({ items }: Props) {
         console.log(selectedIndex)
     }
 
+    // useEffect(() => {
+    //     const initialDims = getImageSize();
+    //     console.log(initialDims)
+    // }, []);
+
+        useLayoutEffect(() => {
+        getImageSize();
+
+        const roTarget = containerRef.current;
+        if (!roTarget) return;
+
+        const ro = new ResizeObserver(() => {
+            getImageSize();
+        });
+        ro.observe(roTarget);
+
+        const onOrientation = () => getImageSize();
+        window.addEventListener('orientationchange', onOrientation);
+
+        return () => {
+            ro.disconnect();
+            window.removeEventListener('orientationchange', onOrientation);
+        }
+    }, [getImageSize]);
+
+    // ensure we re-measure when images load (handles slow network / first paint)
     useEffect(() => {
-        const initialDims = getImageSize();
-        console.log(initialDims)
-    }, []);
+        const imgs = containerRef.current?.querySelectorAll('img') ?? [];
+        const onLoad = () => getImageSize();
+        imgs.forEach(img => img.addEventListener('load', onLoad));
+        return () => imgs.forEach(img => img.removeEventListener('load', onLoad));
+    }, [items, getImageSize]);
+
 
 
     return (
@@ -91,7 +121,7 @@ export default function Carousel3({ items }: Props) {
                 self-center
                 justify-self-start  
                 px-10
-                pb-10 
+                pb-1 
                 text-2xl 
                 text-(--main-100) 
                 uppercase
@@ -99,13 +129,13 @@ export default function Carousel3({ items }: Props) {
             </h2>
 
             {/* Carousel container */}
-            <div className="min-w-[300px] h-auto mx-auto overflow-clip relative shadow-xl">
+            <div ref={containerRef} className="min-w-[300px] h-auto mx-auto overflow-clip relative shadow-xl">
 
                 {/* Carousel slide */}
                 <div className="w-full h-full flex" style={getCarouselStyle()} onTransitionEnd={handleTransitionEnd}>
                     {items.map((item) => {
                         return (
-                            <img key={item.id} ref={imageRef} src={item.imageUrl} alt={item.alt} />
+                            <img key={item.id} src={item.imageUrl} alt={item.alt} />
 
                         )
                     })}

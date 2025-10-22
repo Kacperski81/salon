@@ -39,7 +39,6 @@ export default function Nails() {
 
 
             <Services />
-            {/* <Carousel5 items={nailImages} /> */}
             <div className="hidden sm:block mx-auto w-[90vw] max-w-[1600px]">
                 <Gallery items={nailImages} />
 
