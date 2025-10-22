@@ -99,17 +99,18 @@ export default function Carousel3({ items }: Props) {
 
     return (
         <section className="
-            snap-start
+            xl:snap-start
             min-h-dvh 
             xl:min-h-screen 
             grow-1
             flex
-            flex-col 
+            flex-col
+            gap-8 
             bg-(--main-400)
             px-4
             mt-10
             items-center
-            justify-around
+            justify-center
         ">
 
             {/* Heading */}
