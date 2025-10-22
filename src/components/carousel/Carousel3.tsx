@@ -129,7 +129,7 @@ export default function Carousel3({ items }: Props) {
             </h2>
 
             {/* Carousel container */}
-            <div ref={containerRef} className="min-w-[300px] h-auto mx-auto overflow-clip relative shadow-xl">
+            <div ref={containerRef} className="min-w-[300px] h-auto mx-auto overflow-clip relative shadow-xl grow flex items-center">
 
                 {/* Carousel slide */}
                 <div className="w-full h-full flex" style={getCarouselStyle()} onTransitionEnd={handleTransitionEnd}>
