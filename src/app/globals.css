@@ -379,3 +379,16 @@ body {
 .secondary-close {
     fill: var(--main-600);
 }
+
+.primary-arrow {
+    fill: var(--main-100);
+}
+.secondary-arrow {
+    fill: var(--main-600);
+}
+
+.icon-cheveron-left-circle,
+.icon-cheveron-right-circle {
+    width: 2rem;
+    height: 2rem;
+}

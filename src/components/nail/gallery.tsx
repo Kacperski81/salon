@@ -26,8 +26,10 @@ export default function Gallery({ items }: { items: CarouselItem[] }) {
             min-h-dvh 
             xl:min-h-screen 
             grow-1
-            grid
-            grid-rows-[auto_1fr]
+            flex
+            flex-col
+            xl:grid
+            xl:grid-rows-[auto_1fr]
             bg-(--main-400)
             gap-4"
         >
@@ -40,14 +42,15 @@ export default function Gallery({ items }: { items: CarouselItem[] }) {
             justify-self-start 
             py-2 
             px-10 
-            text-2xl 
+            text-2xl
+            lg:text-3xl 
             text-(--main-100) 
             uppercase
             tracking-widest">GALLERY
             </h2>
 
             {/* Gallery grid */}
-            <div className="w-full max-h-dvh px-2 py-2 justify-self-center">
+            <div className="w-full max-h-dvh px-4">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-7 gap-4">
                 {imagesToDisplay.map((item) => {
                 return (

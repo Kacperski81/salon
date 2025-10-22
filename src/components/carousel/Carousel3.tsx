@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect, useLayoutEffect, useCallback, useRef } from "react";
-import { ArrowBigRight, ArrowBigLeft } from "lucide-react";
+import LeftArrow from "../svgs/LeftArrow";
+import RightArrow from "../svgs/RightArrow";
 
 export type CarouselItem = {
     id: string;
@@ -66,12 +67,7 @@ export default function Carousel3({ items }: Props) {
         console.log(selectedIndex)
     }
 
-    // useEffect(() => {
-    //     const initialDims = getImageSize();
-    //     console.log(initialDims)
-    // }, []);
-
-        useLayoutEffect(() => {
+    useLayoutEffect(() => {
         getImageSize();
 
         const roTarget = containerRef.current;
@@ -108,12 +104,14 @@ export default function Carousel3({ items }: Props) {
             xl:min-h-screen 
             grow-1
             flex
-            px-2
             flex-col 
             bg-(--main-400)
+            px-4
             mt-10
             items-center
-            ">
+            justify-around
+        ">
+
             {/* Heading */}
             <h2 className="
                 mx-auto           
@@ -129,7 +127,7 @@ export default function Carousel3({ items }: Props) {
             </h2>
 
             {/* Carousel container */}
-            <div ref={containerRef} className="min-w-[300px] h-auto mx-auto overflow-clip relative shadow-xl grow flex items-center">
+            <div ref={containerRef} className="min-w-[300px] h-auto mx-auto overflow-clip relative shadow-xl flex ">
 
                 {/* Carousel slide */}
                 <div className="w-full h-full flex" style={getCarouselStyle()} onTransitionEnd={handleTransitionEnd}>
@@ -143,10 +141,10 @@ export default function Carousel3({ items }: Props) {
                 {/* Buttons */}
                 <div className="">
                     <button className="block absolute top-0 bottom-0 cursor-pointer left-0 hover:bg-black/20 focus-visible:bg-black/20 transition-colors duration-500 ease-in-out" onClick={() => navigate(-1)}>
-                        <ArrowBigLeft className="hover:animate-[squish_300ms_ease-in-out] focus-visible:animate-[squish_300ms_ease-in-out]" stroke="white" fill="black" width="2rem" height="2rem" />
+                        <LeftArrow />
                     </button>
                     <button className="block absolute top-0 bottom-0 cursor-pointer right-0 hover:bg-black/20 focus-visible:bg-black/20 transition-colors duration-500 ease-in-out" onClick={() => navigate(1)}>
-                        <ArrowBigRight className="hover:animate-[squish_300ms_ease-in-out] focus-visible:animate-[squish_300ms_ease-in-out]" stroke="white" fill="black" width="2rem" height="2rem" />
+                        <RightArrow />
                     </button>
                 </div>
             </div>
