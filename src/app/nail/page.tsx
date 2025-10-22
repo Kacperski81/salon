@@ -34,20 +34,18 @@ const nailImages: CarouselItem[] = [
 export default function Nails() {
 
     return (
-        <div className="grow flex flex-col snap-y snap-start snap-always snap-proximity bg-(--main-400)">
+        <div className="grow flex flex-col bg-(--main-400)">
             <Border2 />
-
-
             <Services />
-            <div className="hidden sm:block mx-auto w-[90vw] max-w-[1600px]">
-                <Gallery items={nailImages} />
 
+            <div className="hidden sm:block mx-auto w-[90vw] max-w-[1600px]">
+                <Gallery items={nailImages} images={14} />
             </div>
 
             <div className="sm:hidden pb-4">
                 <Carousel3 items={nailImages} />
             </div>
-
+            
             <Footer />
         </div>
     )

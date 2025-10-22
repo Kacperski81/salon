@@ -4,12 +4,11 @@ import { useState } from "react";
 import { CarouselItem } from "../../components/carousel/Carousel3";
 import LightBox from "../lightBox";
 
-export default function Gallery({ items }: { items: CarouselItem[] }) {
+export default function Gallery({ items, images }: { items: CarouselItem[], images: number }) {
     const [lightBoxOpen, setLightBoxOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState<CarouselItem | null>(null);
-    const images = 14;
 
-    const imagesToDisplay = items.slice(0, images);
+    const imagesToDisplay = items.slice(1, images);
 
     const openLightBox = (item: CarouselItem) => {
         setSelectedItem(item);

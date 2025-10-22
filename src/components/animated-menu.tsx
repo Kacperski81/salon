@@ -92,7 +92,7 @@ export default function AnimatedMenu() {
               <Link
                 href="/nail"
                 onClick={handleLinkClick}
-                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/nails") ? "text-(--main-100) font-semibold" : "text-(--main-200) hover:text-(--main-100)"
+                className={`block text-2xl font-playfair transition-colors duration-300 ${isLinkActive("/nail") ? "text-(--main-100) font-semibold" : "text-(--main-200) hover:text-(--main-100)"
                   }`}
               >
                 Nails
