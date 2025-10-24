@@ -44,7 +44,7 @@ const hairImages: CarouselItem[] = [
     { id: "34", imageUrl: './hair-gallery/zd33.jpg', alt: 'Hair Image 33' },
     { id: "35", imageUrl: './hair-gallery/zd34.jpg', alt: 'Hair Image 34' },
     { id: "36", imageUrl: './hair-gallery/zd35.jpg', alt: 'Hair Image 35' },
-    { id: "36", imageUrl: './hair-gallery/zd1.jpg', alt: 'Hair Image 1' },
+    { id: "37", imageUrl: './hair-gallery/zd1.jpg', alt: 'Hair Image 1' },
 ];
 
 export default function Hair() {
