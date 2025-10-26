@@ -140,7 +140,7 @@ export default function Carousel() {
     return (
 
         // Carousel Container
-        <div ref={containerRef} className="grow flex relative overflow-hidden max-h-[60dvh]">
+        <div ref={containerRef} className="grow flex relative overflow-hidden max-h-[75dvh]">
 
             {/* Carousel Slide */}
             <div className="w-full h-full flex" style={getCarouselStyle()} onTransitionEnd={handleTransitionEnd}>
