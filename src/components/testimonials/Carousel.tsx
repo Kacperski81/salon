@@ -140,7 +140,7 @@ export default function Carousel() {
     return (
 
         // Carousel Container
-        <div ref={containerRef} className="grow flex relative overflow-hidden">
+        <div ref={containerRef} className="grow flex relative overflow-hidden max-h-[60dvh]">
 
             {/* Carousel Slide */}
             <div className="w-full h-full flex" style={getCarouselStyle()} onTransitionEnd={handleTransitionEnd}>
@@ -152,7 +152,7 @@ export default function Carousel() {
                             className="
                                 min-w-full
                                 max-w-[700px]
-                                max-h-[60dvh]
+                                relative
                                 bg-cover 
                                 bg-no-repeat
                                 flex
@@ -169,7 +169,6 @@ export default function Carousel() {
                                 rounded-md
                                 px-4
                                 py-2
-                                relative
                                 isolate
                                 z-1
                                 testimonial
