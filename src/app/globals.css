@@ -223,7 +223,9 @@ body {
         /* border-radius: inherit; */
         border: 1px solid transparent;
         background: linear-gradient(var(--main-100), var(--main-200)) border-box;
-        mask: linear-gradient(black 0 0) border-box, linear-gradient(black 0 0) padding-box;
+        mask: 
+            linear-gradient(black 0 0) border-box, 
+            linear-gradient(black 0 0) padding-box;
         mask-composite: subtract;
     }
 }
@@ -391,4 +393,31 @@ body {
 .icon-cheveron-right-circle {
     width: 2rem;
     height: 2rem;
+}
+
+.testimonial::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--main-100), var(--main-500)) border-box;
+    mask: 
+        linear-gradient(black, black) border-box,
+        linear-gradient(black, black) padding-box;
+    mask-composite: subtract;
+}
+
+.icon-star {
+    width: 2rem;
+    height: 2rem;
+
+    .primary-icon-star {
+        fill: transparent;
+    }
+
+    .secondary-icon-star {
+        fill: gold
+    }
 }
