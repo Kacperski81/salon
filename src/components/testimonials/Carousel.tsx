@@ -152,6 +152,7 @@ export default function Carousel() {
                             className="
                                 min-w-full
                                 max-w-[700px]
+                                max-h-[60dvh]
                                 bg-cover 
                                 bg-no-repeat
                                 flex
