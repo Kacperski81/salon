@@ -49,14 +49,10 @@ const priceList: PriceList = [
                 "items": [
                     { "name": "Face", "price": "£70" },
                     { "name": "Face & neck", "price": "£80" },
-                    { "name": "Face & neck & clearage", "price": "£100" }
+                    { "name": "Face & neck & neckline", "price": "£100" }
                 ]
             },
-            {
-                "treatment": "Kobido massage",
-                "price": "£70"
-            },
-            { "treatment": "Lifting thermal massage: face & neck & clearage", "price": "£70" },
+            { "treatment": "Lifting thermal massage: face & neck & neckline", "price": "£70" },
             { "treatment": "Ultra hydration treatment", "price": "£60" },
             {
                 "treatment": "Infinite RF - fractional microneedle system machine for face and body (recommended consultation)",
@@ -78,7 +74,6 @@ const priceList: PriceList = [
         id: 2,
         name: "Eyebrows",
         treatments: [
-            { "treatment": "Permanent ombre brows", "price": "From £250" },
             { "treatment": "Eyebrow lamination", "price": "£49" },
             { "treatment": "Eyebrow shaping & tinting", "price": "From £15" },
             { "treatment": "Eyebrow shaping & tinting & eyelashes tinting", "price": "£30" }
