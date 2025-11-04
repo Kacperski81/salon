@@ -3,6 +3,7 @@ import Carousel3, { CarouselItem } from "@/components/carousel/Carousel3";
 import Footer from "@/components/footer";
 import Services from "@/components/nail/services";
 import Gallery from "@/components/nail/gallery";
+import Gallery1 from "@/components/gallery/Gallery1";
 
 
 const nailImages: CarouselItem[] = [
@@ -38,8 +39,12 @@ export default function Nails() {
             <Border2 />
             <Services />
 
-            <div className="hidden sm:block mx-auto w-[90vw] max-w-[1600px]">
+            {/* <div className="hidden sm:block mx-auto w-[90vw] max-w-[1600px]">
                 <Gallery items={nailImages} images={14} />
+            </div> */}
+
+            <div>
+                <Gallery1 pictures={nailImages} />
             </div>
 
             <div className="sm:hidden pb-4">
