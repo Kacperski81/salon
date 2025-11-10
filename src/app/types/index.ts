@@ -23,3 +23,9 @@ export type LogoScrollerItem = {
     altText: string;
     imagePath: string;
 }
+
+export type TreatmentsData = {
+    name: string;
+    description: string;
+    price: string;
+}
