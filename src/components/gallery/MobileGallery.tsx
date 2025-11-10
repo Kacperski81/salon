@@ -8,7 +8,7 @@ import { useState } from "react";
 // import Carousel3 from "../carousel/Carousel3";
 // import { Ligature } from "lucide-react";
 // import LightBoxCarousel from "../carousel/LightBoxCarousel";
-import LightBox from "../LightBox";
+import LightBox from "../LightBox2";
 
 export default function MobileGallery({ pictures }: { pictures: CarouselItem[] }) {
     // pictures are for the lightbox functionality

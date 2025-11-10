@@ -23,10 +23,12 @@ export default function Hair() {
             <Services />
             <Treatments />
 
-            Mobile gallery
+            {/* Mobile gallery */}
             <div className="xl:hidden">
                 <MobileGallery pictures={hairImages} />
             </div>
+
+            {/* Desktop gallery */}
             <div className="hidden xl:block">
                 <Gallery4 pictures4={hairImages} background={background} />
             </div>
