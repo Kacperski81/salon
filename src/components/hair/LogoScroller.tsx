@@ -35,7 +35,7 @@ export default function LogoScroller() {
         <Section background={logoScrollerBg} >
 
             {/* Scroller */}
-            <div ref={scrollerRef} className="scroller self-start 
+            <div ref={scrollerRef} className="scroller
                 mt-20 max-w-[80vw] mx-auto 
                 overflow-hidden
                 border"
@@ -44,23 +44,21 @@ export default function LogoScroller() {
                     WebkitMaskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)'
                 }}
             >
-                {/* mask-[linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] */}
-                {/* Tag list */}
                 {/* Inner scroller */}
                 <ul className="scroller__inner
                     py-2 
                     list-none
                     w-max
-                    flex motion-reduce:flex-wrap gap-[10px]
+                    flex gap-[10px]
                     animate-scroll
                     will-change-transform
-                    *:p-1 *:rounded-lg *:bg-(--main-50)/10 *:w-[200px] md:*:w-[300px] md:*:w-[400px] flex-shrink-0 *:flex *:items-center *:justify-center"
+                    *:p-1 *:rounded-lg *:bg-(--main-50)/10 *:w-[200px] md:*:w-[300px] md:*:w-[400px] *:flex-shrink-0 *:flex *:items-center *:justify-center"
                 >
                     {/* <img src="/logosForScroll/loreal2.png" alt="L'Oreal-logo" className="w-full" /> */}
                     {scrollerLogos.map((logo) => {
                         return (
                             <li key={logo.name}>
-                                <img src={logo.imagePath} alt={logo.altText} className="w-full" />
+                                <img src={logo.imagePath} alt={logo.altText} className="w-full h-auto object-contain" />
                             </li>
                         )
                     })}

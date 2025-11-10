@@ -1,3 +1,4 @@
+import Section from "../Section";
 import Carousel from "./Carousel";
 import Testimonial from "./testimonial"
 
@@ -36,51 +37,41 @@ const testimonials: Testimonial[] = [
 export default function Testimonials() {
 
     return (
-        <section className="
-            snap-start 
-            snap-always 
-            mx-auto
-            min-h-dvh
-            gap-4
-            xl:min-h-screen 
-            xl:px-20
-            flex
-            flex-col
-            xl:mx-auto
-            xl:gap-6
-            ">
+        <Section>
 
-            <h2 className="
-                xl:mt-16 
+            <main className="md:grow w-full bg-(--main-400) bg-blend-multiply flex flex-col">
+
+                <h2 className="
+                mt-10
+                lg:mt-16 
                 font-(family-name:--font-aboreto) 
                 text-(--main-100) 
                 text-xl sm:text-3xl lg:text-4xl 
                 text-center 
                 font-light
                 ">
+                    What Our Clients Say
+                </h2>
+                {/* <h2 className="text-3xl lg:text-5xl font-light text-[var(--main-900)] mb-4 text-balance">
                 What Our Clients Say
-            </h2>
-            {/* <h2 className="text-3xl lg:text-5xl font-light text-[var(--main-900)] mb-4 text-balance">
-                What Our Clients Say
-            </h2> */}
+                </h2> */}
 
-            <p className="text-[var(--main-700)] text-base lg:text-lg max-w-2xl mx-auto text-pretty">
-                Discover why our clients trust us with their hair transformations
-            </p>
+                <p className="text-[var(--main-700)] text-base lg:text-lg max-w-2xl mx-auto text-pretty">
+                    Discover why our clients trust us with their hair transformations
+                </p>
 
-            <div className="hidden xl:grow xl:grid xl:grid-cols-3 xl:gap-10 xl:min-h-[550px] xl:max-h-[600px] overflow-hidden">
+                <div className="mt-2 hidden xl:px-16 xl:grow xl:grid xl:grid-cols-3 xl:gap-10 xl:min-h-[550px] xl:max-h-[600px] overflow-hidden">
 
-                {testimonials.map((testimonial) => (
-                    <Testimonial key={testimonial.id} {...testimonial} />
-                ))}
-            </div>
+                    {testimonials.map((testimonial) => (
+                        <Testimonial key={testimonial.id} {...testimonial} />
+                    ))}
+                </div>
 
-            <div className="xl:hidden grow flex max-w-[90dvw] mx-auto pb-10">
-                <Carousel />
-            </div>
-
-
-        </section>
+                <div className="xl:hidden grow flex max-w-[90dvw] md:max-w-[500px] mx-auto pb-10">
+                    <Carousel />
+                </div>
+            </main>
+        </Section>
 
     )
 }
