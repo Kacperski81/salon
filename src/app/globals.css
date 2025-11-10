@@ -566,8 +566,26 @@ body {
 }
 
 .scroller {
-    /* mask: linear-gradient(
-        90deg, 
-        transparent, white 20%, 
-        white 80%, transparent); */
+    position: relative;
+}
+
+.scroller::before,
+.scroller::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.scroller::before {
+    left: 0;
+    background: linear-gradient(to right, var(--body-bg, #fff), transparent);
+}
+
+.scroller::after {
+    right: 0;
+    background: linear-gradient(to left, var(--body-bg, #fff), transparent);
 }
