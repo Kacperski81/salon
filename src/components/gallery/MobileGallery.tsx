@@ -5,9 +5,9 @@ import Section from "../Section";
 import background from "../../../public/nailBg.png";
 import type { CarouselItem } from "@/app/types";
 import { useState } from "react";
-import Carousel3 from "../carousel/Carousel3";
-import { Ligature } from "lucide-react";
-import LightBoxCarousel from "../carousel/LightBoxCarousel";
+// import Carousel3 from "../carousel/Carousel3";
+// import { Ligature } from "lucide-react";
+// import LightBoxCarousel from "../carousel/LightBoxCarousel";
 import LightBox from "../LightBox";
 
 export default function MobileGallery({ pictures }: { pictures: CarouselItem[] }) {
