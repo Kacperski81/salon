@@ -40,6 +40,7 @@ export default function LogoScroller() {
                 overflow-hidden
                 border
                 mask-[linear-gradient(90deg,transparent,white_20%,white_80%,transparent)]
+                [-webkit-mask-[linear-gradient(90deg,transparent,white_20%,white_80%,transparent)]]
                 "
             >
                 {/* mask-[linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] */}
@@ -48,9 +49,10 @@ export default function LogoScroller() {
                 <ul className="scroller__inner
                     py-2 
                     list-none
-                    w-fit
+                    w-max
                     flex motion-reduce:flex-wrap gap-[10px]
                     animate-scroll
+                    will-change-transform
                     *:p-1 *:rounded-lg *:bg-(--main-50)/10 *:w-[200px] md:*:w-[300px] md:*:w-[400px] flex-shrink-0 *:flex *:items-center *:justify-center"
                 >
                     {/* <img src="/logosForScroll/loreal2.png" alt="L'Oreal-logo" className="w-full" /> */}

@@ -40,9 +40,6 @@ export default function Testimonials() {
             snap-start 
             snap-always 
             mx-auto
-            bg-[url(../../public/solidBg.jpg)]
-            bg-(--main-200)
-            bg-blend-multiply
             min-h-dvh
             gap-4
             xl:min-h-screen 

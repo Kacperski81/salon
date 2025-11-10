@@ -9,7 +9,7 @@ import Testimonials from "@/components/testimonials/testimonials";
 export default function Home() {
 
   return (
-    <div className="text-center flex flex-col relative">
+    <div className="text-center flex flex-col relative bg-[url(../../public/solidBg.jpg)] bg-(--main-200) bg-blend-multiply">
       <HeroSection3 />
       <AboutUs />
       <Services5 />

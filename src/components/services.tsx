@@ -82,7 +82,7 @@ export default function Services5() {
 
     return (
         // <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
-        <section id="services" className="xl:snap-start xl:snap-always bg-[url(../../public/solidBg.jpg)] bg-(--main-200) bg-blend-multiply min-h-dvh xl:min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
+        <section id="services" className="xl:snap-start xl:snap-always min-h-dvh xl:min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
             <div className="grow flex flex-col lg:justify-center gap-3">
                 {/* <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-2xl sm:text-3xl lg:text-4xl mt-8 xl:mt-5 font-light">Our Services</h2> */}
                 <PageHeading title="OUR SERVICES" />
