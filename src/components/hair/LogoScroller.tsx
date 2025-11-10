@@ -32,7 +32,7 @@ export default function LogoScroller() {
     }, [])
 
     return (
-        <Section background={logoScrollerBg} >
+        <Section>
 
             {/* Scroller */}
             <div ref={scrollerRef} className="scroller
