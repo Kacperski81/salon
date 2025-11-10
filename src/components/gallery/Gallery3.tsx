@@ -1,4 +1,4 @@
-import type { CarouselItem } from "@/components/carousel/Carousel3";
+import type { CarouselItem } from "@/app/types";
 import PageHeading from "../PageHeading";
 
 export default function Gallery3({ pictures3 }: { pictures3: CarouselItem[] }) {
