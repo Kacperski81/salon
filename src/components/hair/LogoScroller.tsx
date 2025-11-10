@@ -35,7 +35,7 @@ export default function LogoScroller() {
         <Section>
 
             {/* Scroller */}
-            <div ref={scrollerRef} className="scroller
+            {/* <div ref={scrollerRef} className="scroller
                 mt-20 max-w-[80vw] mx-auto 
                 overflow-hidden
                 border"
@@ -43,7 +43,22 @@ export default function LogoScroller() {
                     maskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
                     WebkitMaskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)'
                 }}
+            > */}
+            <div
+                ref={scrollerRef}
+                className="scroller self-start 
+                    mt-20 max-w-[80vw] mx-auto 
+                    overflow-hidden
+                    border"
+                style={{
+                    maskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
+                    WebkitMaskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
+                    // Add WebKit transform for animation
+                    WebkitTransform: 'translateX(0)',  // Initial state
+                    transform: 'translateX(0)',  // Fallback
+                }}
             >
+
                 {/* Inner scroller */}
                 <ul className="scroller__inner
                     py-2 
