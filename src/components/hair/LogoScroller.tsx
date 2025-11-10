@@ -50,13 +50,13 @@ export default function LogoScroller() {
                     mt-20 max-w-[80vw] mx-auto 
                     overflow-hidden
                     border"
-                style={{
-                    maskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
-                    WebkitMaskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
-                    // Add WebKit transform for animation
-                    WebkitTransform: 'translateX(0)',  // Initial state
-                    transform: 'translateX(0)',  // Fallback
-                }}
+                // style={{
+                //     maskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
+                //     WebkitMaskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
+                //     // Add WebKit transform for animation
+                //     WebkitTransform: 'translateX(0)',  // Initial state
+                //     transform: 'translateX(0)',  // Fallback
+                // }}
             >
 
                 {/* Inner scroller */}
