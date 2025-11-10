@@ -9,7 +9,7 @@ import { getScrollerLogos } from "@/app/lib/scrollerLogos";
 export default function LogoScroller() {
     const scrollerRef = useRef<HTMLDivElement>(null);
     const scrollerLogos = getScrollerLogos();
-    
+
     useEffect(() => {
         const scroller = scrollerRef.current;
         if (!scroller) return;
@@ -38,10 +38,11 @@ export default function LogoScroller() {
             <div ref={scrollerRef} className="scroller self-start 
                 mt-20 max-w-[80vw] mx-auto 
                 overflow-hidden
-                border
-                mask-[linear-gradient(90deg,transparent,white_20%,white_80%,transparent)]
-                [-webkit-mask-[linear-gradient(90deg,transparent,white_20%,white_80%,transparent)]]
-                "
+                border"
+                style={{
+                    maskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
+                    WebkitMaskImage: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)'
+                }}
             >
                 {/* mask-[linear-gradient(90deg,transparent,white_20%,white_80%,transparent)] */}
                 {/* Tag list */}
