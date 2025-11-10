@@ -89,16 +89,7 @@
 @theme {
     /* --animate-abc: wiggle 1s ease-in-out infinite; */
     --animate-colorShift: colorShift 10s linear infinite;
-    --animate-scroll: scroll 15s linear infinite;
-    
-    @keyframes scroll {
-        from {
-            transform: translate3d(0, 0, 0);
-        }
-        to {
-            transform: translate3d(calc(-50% - 5px), 0, 0);
-        }
-    }
+    /* --animate-scroll: scroll 15s linear infinite; */
 
     @keyframes wiggle {
 
@@ -576,6 +567,20 @@ body {
     will-change: transform;
     backface-visibility: hidden;
 }
+
+.scroller[data-animated="true"] .scroller__inner {
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(calc(-50% - 5px), 0, 0);
+    }
+}
+
 
 .scroller::before,
 .scroller::after {
