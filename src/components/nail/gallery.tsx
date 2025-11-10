@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CarouselItem } from "../../components/carousel/Carousel3";
+import type { CarouselItem } from "@/app/types";
 import LightBox from "../LightBox2";
 
 export default function Gallery({ items, images }: { items: CarouselItem[], images: number }) {
