@@ -33,7 +33,7 @@ export default function Hair() {
                 <Gallery4 pictures4={hairImages} background={background} />
             </div>
 
-            <div className="motion-reduce:hidden aria-hidden:hidden">
+            <div className="">
                 <LogoScroller />
             </div>
 
