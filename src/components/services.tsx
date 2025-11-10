@@ -8,6 +8,7 @@ import nailsBg from "../../public/mainServicesNails.jpg";
 import beautyBg from "../../public/beautyBg2.jpg";
 import productsBg from "../../public/davines-background.jpg";
 import { ScissorsSVG, BeautySVG, NailSVG, ProductsSVG } from "./svgs";
+import PageHeading from "./PageHeading";
 
 type ServiceData = {
     id: string
@@ -81,9 +82,10 @@ export default function Services5() {
 
     return (
         // <section id="services" className="snap-center bg-(--main-100) min-h-screen px-2 py-2 sticky top-0 flex flex-col lg:py-12 lg:px-20 z-30">
-        <section id="services" className="snap-start snap-always bg-(--main-400) min-h-dvh xl:min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
+        <section id="services" className="xl:snap-start xl:snap-always bg-[url(../../public/solidBg.jpg)] bg-(--main-200) bg-blend-multiply min-h-dvh xl:min-h-screen px-2 py-2 flex flex-col lg:py-12 lg:px-20">
             <div className="grow flex flex-col lg:justify-center gap-3">
-                <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-2xl sm:text-3xl lg:text-4xl mt-8 xl:mt-5 font-light">Our Services</h2>
+                {/* <h2 className="font-(family-name:--font-aboreto) text-(--main-100) text-2xl sm:text-3xl lg:text-4xl mt-8 xl:mt-5 font-light">Our Services</h2> */}
+                <PageHeading title="OUR SERVICES" />
                 <p className="leading-relaxed text-base sm:text-lg md:text-xl text-(--main-200)">
                     {`From a simple cut to a full makeover, we've got you covered.`}
                 </p>

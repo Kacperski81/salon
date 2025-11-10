@@ -1,9 +1,11 @@
+import type { CarouselItem } from "@/app/types";
 import { Border2 } from "@/components/border";
-import Carousel3, { CarouselItem } from "@/components/carousel/Carousel3";
+import Carousel3 from "@/components/carousel/Carousel3";
 import Footer from "@/components/footer";
 import Services from "@/components/nail/services";
-import Gallery from "@/components/nail/gallery";
-import Gallery1 from "@/components/gallery/Gallery1";
+import MobileGallery from "@/components/gallery/MobileGallery";
+import Gallery4 from "@/components/gallery/Gallery4";
+import background from "../../../public/nailBg.png"
 
 
 const nailImages: CarouselItem[] = [
@@ -39,18 +41,17 @@ export default function Nails() {
             <Border2 />
             <Services />
 
-            {/* <div className="hidden sm:block mx-auto w-[90vw] max-w-[1600px]">
-                <Gallery items={nailImages} images={14} />
-            </div> */}
-
-            <div>
-                <Gallery1 pictures={nailImages} />
-            </div>
-
-            <div className="sm:hidden pb-4">
-                <Carousel3 items={nailImages} />
+            {/* Mobile gallery */}
+            <div className="xl:hidden">
+                <MobileGallery 
+                pictures={nailImages} />
             </div>
             
+            {/* Desktop gallery */}
+            <div className="hidden xl:block">
+                <Gallery4 pictures4={nailImages} background={background} />
+            </div>
+
             <Footer />
         </div>
     )

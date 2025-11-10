@@ -1,15 +1,10 @@
 "use client"
 
 import { useState } from "react";
-
-type nailsServiceData = {
-    id: number;
-    name: string;
-    items: {
-        service: string;
-        price: string
-    }[];
-}
+import PageHeading from "../PageHeading";
+import type { nailsServiceData } from "@/app/types";
+import Section from "../Section";
+import nailsBgFlowers from "../../../public/nailsBgFlowers.jpg";
 
 const nailsServiceData: nailsServiceData[] = [
     {
@@ -104,37 +99,27 @@ export default function Services() {
     }
 
     return (
-        <section className="
-                    snap-start
-                    min-h-dvh 
-                    xl:min-h-screen
-                    text-center 
-                    grow-1
-                    flex 
-                    bg-(--main-300)
-                    bg-[url(../../public/nailsBgFlowers.jpg)]
-                    bg-blend-multiply
-                    bg-center-top
-                    bg-cover
-                    bg-no-repeat">
-
-            {/* <Border2 /> */}
+        // <section className="
+        //             snap-start
+        //             min-h-dvh 
+        //             xl:min-h-screen
+        //             text-center 
+        //             grow-1
+        //             flex 
+        //             bg-(--main-300)
+        //             bg-[url(../../public/nailsBgFlowers.jpg)]
+        //             bg-blend-multiply
+        //             bg-center-top
+        //             bg-cover
+        //             bg-no-repeat"
+        //     >
+        <Section background={nailsBgFlowers}>
 
             <div className="grow flex lg:pb-7">
 
-                <div className="grow flex flex-col lg:items-end">
+                <div className="grow flex flex-col items-center xl:items-end">
                     {/* Heading */}
-                    <h2 className="
-                                mt-10 
-                                font-(family-name:--font-aboreto) 
-                                self-center 
-                                pt-4 
-                                pb-2 
-                                px-10 
-                                text-2xl 
-                                text-(--main-100) 
-                                uppercase 
-                                tracking-widest">NAIL SERVICES</h2>
+                    <PageHeading title="NAIL SERVICES" />
 
                     {/* wrapper */}
                     <div className="
@@ -169,7 +154,7 @@ export default function Services() {
                                         key={service.id}
                                         onClick={() => togglePanel(service.id)}
                                         className={`
-                                                    border-gradient
+                                        border-gradient
                                                     isolate 
                                                     overflow-hidden 
                                                     relative 
@@ -185,17 +170,17 @@ export default function Services() {
                                                 aria-controls={`${service.name}-content`}
                                                 aria-expanded={service.id === expandedPanel}
                                                 className={`
-                                                            ${expandedPanel === service.id ? "py-(--panel-padding)" : "py-2 xl:py-1 cursor-pointer"}`}>
+                                                    ${expandedPanel === service.id ? "py-(--panel-padding)" : "py-2 xl:py-1 cursor-pointer"}`}>
                                                 {/* Panel title */}
                                                 <span
                                                     className="
-                                                                text-6 
-                                                                text-base 
-                                                                xl:text-lg 
-                                                                font-bold 
-                                                                font-(family-name:--font-aboreto)
-                                                                uppercase
-                                                                tracking-wide">{service.name}</span>
+                                                    text-6 
+                                                    text-base 
+                                                    xl:text-lg 
+                                                    font-bold 
+                                                    font-(family-name:--font-aboreto)
+                                                    uppercase
+                                                    tracking-wide">{service.name}</span>
                                             </button>
                                         </h3>
 
@@ -206,7 +191,7 @@ export default function Services() {
                                             role="region"
                                             aria-hidden={service.id !== expandedPanel}
                                             className={`
-                                                        flex 
+                                                flex 
                                                         justify-center 
                                                         z-10 
                                                         text-xl 
@@ -227,14 +212,14 @@ export default function Services() {
                                                             <li
                                                                 key={item.service}
                                                                 className="
-                                                                            group 
-                                                                            border-b 
-                                                                            border-b-(--main-300) 
-                                                                            last:border-b-0 
-                                                                            p-2
-                                                                            text-sm 
-                                                                            md:text-base 
-                                                                            xl:text-lg 
+                                                            group 
+                                                            border-b 
+                                                            border-b-(--main-300) 
+                                                            last:border-b-0 
+                                                            p-2
+                                                            text-sm 
+                                                            md:text-base 
+                                                            xl:text-lg 
                                                                             xl:px-4">
                                                                 <div className="flex justify-between">
                                                                     <p className="text-(--main-100) lg:text-(--main-200)">{item.service}</p>
@@ -255,6 +240,6 @@ export default function Services() {
 
                 </div>
             </div>
-        </section>
+        </Section>
     )
 }

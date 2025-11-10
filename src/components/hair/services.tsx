@@ -54,7 +54,8 @@ const hairServicesData: HairServicesData = [
             { "service": "Full Head Bleach (Toner included)", "price": "£110" },
             { "service": "Re-growth Bleach (Toner included)", "price": "£90" },
             { "service": "Men's Grey Blending", "price": "£25" },
-            { "service": "Toner", "price": "From £25" }
+            { "service": "Toner", "price": "From £25" },
+            { "service": "* Colour services must be accompanied with a blow dry", price: ""}
         ]
     },
     {
@@ -102,7 +103,7 @@ export default function Services() {
 
             <div className="grow flex lg:pb-7">
 
-                <div className="grow flex flex-col lg:items-end">
+                <div className="grow flex flex-col items-center xl:items-end">
                     {/* Heading */}
                     <h2 className="
                         mt-10 
@@ -178,7 +179,7 @@ export default function Services() {
                                                         font-bold 
                                                         font-(family-name:--font-aboreto)
                                                         uppercase
-                                                        tracking-wide">{service.name}</span>
+                                                        tracking-wide">{service.name === "Colouring" ? "Colouring *" : service.name}</span>
                                             </button>
                                         </h3>
 

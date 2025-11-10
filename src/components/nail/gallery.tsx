@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { CarouselItem } from "../../components/carousel/Carousel3";
-import LightBox from "../lightBox";
+import LightBox from "../LightBox";
 
 export default function Gallery({ items, images }: { items: CarouselItem[], images: number }) {
     const [lightBoxOpen, setLightBoxOpen] = useState(false);
@@ -32,21 +32,7 @@ export default function Gallery({ items, images }: { items: CarouselItem[], imag
             bg-(--main-400)
             gap-4"
         >
-            {/* Heading */}
-            <h2 className="
-            mx-auto           
-            font-(family-name:--font-aboreto) 
-            self-center
-            mt-20
-            justify-self-start 
-            py-2 
-            px-10 
-            text-2xl
-            lg:text-3xl 
-            text-(--main-100) 
-            uppercase
-            tracking-widest">GALLERY
-            </h2>
+            
 
             {/* Gallery grid */}
             <div className="w-full max-h-dvh px-4">

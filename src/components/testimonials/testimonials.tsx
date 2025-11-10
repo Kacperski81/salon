@@ -40,11 +40,11 @@ export default function Testimonials() {
             snap-start 
             snap-always 
             mx-auto
-            max-w-[90dvw]   
+            bg-[url(../../public/solidBg.jpg)]
+            bg-(--main-200)
+            bg-blend-multiply
             min-h-dvh
             gap-4
-            mt-10
-            xl:max-w-[1700px]
             xl:min-h-screen 
             xl:px-20
             flex
@@ -78,7 +78,7 @@ export default function Testimonials() {
                 ))}
             </div>
 
-            <div className="xl:hidden grow flex">
+            <div className="xl:hidden grow flex max-w-[90dvw] mx-auto pb-10">
                 <Carousel />
             </div>
 

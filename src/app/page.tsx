@@ -9,7 +9,7 @@ import Testimonials from "@/components/testimonials/testimonials";
 export default function Home() {
 
   return (
-    <div className="text-center flex flex-col gap-8 bg-(--main-400) relative">
+    <div className="text-center flex flex-col relative">
       <HeroSection3 />
       <AboutUs />
       <Services5 />

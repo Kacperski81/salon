@@ -1,9 +1,31 @@
+"use client";
+
 import type { CarouselItem } from "@/components/carousel/Carousel3";
+import PageHeading from "../PageHeading";
+import { useState } from "react";
 
 export default function Gallery1({ pictures }: { pictures: CarouselItem[] }) {
-    const picturesSlice = pictures.slice(1, 5);
+    const [currentPage, setCurrentPage] = useState<number>(0);
+    const itemsPerPage = 4;
+    const totalPages = Math.ceil(pictures.length / itemsPerPage);
+
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const picturesSlice = pictures.slice(startIndex, endIndex);
     console.log(picturesSlice);
-    
+
+    const handleNext = () => {
+        if (currentPage < totalPages - 1) {
+            setCurrentPage(prev => prev + 1);
+        }
+    };
+
+    const handlePrevious = () => {
+        if (currentPage > 0) {
+            setCurrentPage(prev => prev - 1);
+        }
+    }
+
 
     return (
         <section className="snap-start
@@ -18,12 +40,34 @@ export default function Gallery1({ pictures }: { pictures: CarouselItem[] }) {
             flex justify-center items-center
             gap-4">
 
-            <div className="gallery border border-3 gap-(--gap) ">
-                {picturesSlice.map((picture) => {
-                    return (
-                        <img src={picture.imageUrl} alt={picture.alt} key={picture.id} />
-                    )
-                })}
+            <div className="flex flex-col justify-center items-center">
+
+                <PageHeading title="GALLERY" />
+
+                {/* Gallery */}
+                <div className="gallery gap-(--gap)">
+                    {picturesSlice.map((picture) => {
+                        return (
+                            <img src={picture.imageUrl} alt={picture.alt} key={picture.id} 
+                                className="shadow-lg rounded-lg"
+                            />
+                        )
+                    })}
+                </div>
+
+                {/* <GalleryControls /> */}
+                <div>
+                    <button
+                        onClick={handlePrevious}
+                    >
+                        Previous
+                    </button>
+                    <button
+                        onClick={handleNext}
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
 
         </section>

@@ -125,7 +125,8 @@ export default function Beauty() {
                         text-2xl 
                         text-(--main-100)
                         uppercase
-                        tracking-widest">BEAUTY SERVICES</h2>
+                        tracking-widest">BEAUTY SERVICES
+                    </h2>
 
                     {/* Wrapper */}
                     <div className="

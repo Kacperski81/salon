@@ -17,13 +17,16 @@ type Props = {
 
 export default function LightBoxCarousel({ items, item }: Props) {
     const initialIndex = items.findIndex(i => i.id === item.id);
+    const [selectedIndex, setSelectedIndex] = useState<number>(initialIndex !== -1 ? initialIndex : 0);
     const [isSliderEnd, setIsSliderEnd] = useState<boolean>(false)
-    const [selectedIndex, setSelectedIndex] = useState<number>(initialIndex);
     const [containerDimensions, setContainerDimensions] = useState<{ width: number, height: number }>({ width: 0, height: 0 });
     const containerRef = useRef<HTMLDivElement>(null);
+    const isNavigating = useRef<boolean>(false);
 
     // navigation
     const navigate = (number: 1 | -1) => {
+        isNavigating.current = true;
+
         if (selectedIndex <= 0 && number === -1) return;
         if (selectedIndex >= items.length - 1 && number === 1) return;
         setSelectedIndex(prevIndex => prevIndex + number);
@@ -44,7 +47,7 @@ export default function LightBoxCarousel({ items, item }: Props) {
 
         return {
             transform: `translateX(-${containerDimensions.width * selectedIndex}px)`,
-            transition: `${isSliderEnd ? 'none' : 'transform 500ms ease-in-out'}`
+            transition: `${!isNavigating.current || isSliderEnd ? 'none' : 'transform 500ms ease-in-out'}`
         }
     }
 
@@ -66,11 +69,12 @@ export default function LightBoxCarousel({ items, item }: Props) {
             toggleTransition();
             setSelectedIndex(1);
         }
-        console.log(selectedIndex)
     }
 
     useLayoutEffect(() => {
+
         getImageSize();
+
 
         const roTarget = containerRef.current;
         if (!roTarget) return;
@@ -91,39 +95,43 @@ export default function LightBoxCarousel({ items, item }: Props) {
 
     // ensure we re-measure when images load (handles slow network / first paint)
     useEffect(() => {
-        toggleTransition();
         const imgs = containerRef.current?.querySelectorAll('img') ?? [];
         const onLoad = () => getImageSize();
         imgs.forEach(img => img.addEventListener('load', onLoad));
         return () => imgs.forEach(img => img.removeEventListener('load', onLoad));
     }, [items, getImageSize]);
 
-
+    const hasMeasured = containerDimensions.width > 0;
 
     return (
-        <section className="">
+        <section className="absolute top-0 left-0 border border-4 border-(--main-50)">
 
             {/* Carousel container */}
-            <div ref={containerRef} className="w-[550px] h-auto mx-auto overflow-clip relative shadow-xl">
+            <div ref={containerRef} className="min-w-[80dvw] xl:w-[550px] h-auto xl:mx-auto overflow-clip relative shadow-xl">
 
-                {/* Carousel slide */}
-                <div className="w-full h-full flex" style={getCarouselStyle()} onTransitionEnd={handleTransitionEnd}>
-                    {items.map((item) => {
-                        return (
-                            <img key={item.id} src={item.imageUrl} alt={item.alt} />
+                {hasMeasured && (
+                    <>
 
-                        )
-                    })}
-                </div>
-                {/* Buttons */}
-                <div className="">
-                    <button className="block absolute top-0 bottom-0 cursor-pointer left-0 hover:bg-black/20 focus-visible:bg-black/20 transition-colors duration-500 ease-in-out" onClick={() => navigate(-1)}>
-                        <LeftArrow />
-                    </button>
-                    <button className="block absolute top-0 bottom-0 cursor-pointer right-0 hover:bg-black/20 focus-visible:bg-black/20 transition-colors duration-500 ease-in-out" onClick={() => navigate(1)}>
-                        <RightArrow />
-                    </button>
-                </div>
+                        {/* Carousel slide */}
+                        <div className="w-full h-full flex" style={getCarouselStyle()} onTransitionEnd={handleTransitionEnd}>
+                            {items.map((item) => {
+                                return (
+                                    <img key={item.id} src={item.imageUrl} alt={item.alt} />
+
+                                )
+                            })}
+                        </div>
+                        {/* Buttons */}
+                        <div className="">
+                            <button className="block absolute top-0 bottom-0 cursor-pointer left-0 hover:bg-black/20 focus-visible:bg-black/20 transition-colors duration-500 ease-in-out" onClick={() => navigate(-1)}>
+                                <LeftArrow />
+                            </button>
+                            <button className="block absolute top-0 bottom-0 cursor-pointer right-0 hover:bg-black/20 focus-visible:bg-black/20 transition-colors duration-500 ease-in-out" onClick={() => navigate(1)}>
+                                <RightArrow />
+                            </button>
+                        </div>
+                    </>
+                )}
             </div>
 
         </section>

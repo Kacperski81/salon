@@ -5,8 +5,7 @@ import { MapPin } from "lucide-react";
 
 export default function AboutUs() {
     return (
-        // <section id="about" className="snap-center sticky py-10 top-0 bg-(--main-200) grid justify-items-center content-center gap-12 xl:grid-cols-2 xl:gap-16 min-h-screen z-20">
-        <section id="about" className="snap-start snap-always py-10 bg-(--main-400) grid justify-items-center content-center gap-12 xl:grid-cols-2 lg:gap-12 xl:gap-16 min-h-dvh xl:min-h-screen">
+        <section id="about" className="snap-start snap-always py-10 bg-[url(../../public/solidBg.jpg)] bg-(--main-200) bg-blend-multiply grid justify-items-center content-center gap-12 xl:grid-cols-2 lg:gap-12 xl:gap-16 min-h-dvh xl:min-h-screen">
             <div className="relative w-[70%] sm:w-[60%] md:w-[50%] xl:w-[70%] aspect-[5/4] xl:justify-self-end xl:self-center shadow-2xl">
                 <Image
                     src={ImageSrc}

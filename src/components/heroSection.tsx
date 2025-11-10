@@ -21,9 +21,11 @@ export default function heroSection3() {
                     bg-top
                     bg-no-repeat
                                   
-                    flex 
-                    lg:bg-linear-[90deg,var(--bg-gradient-100)_10%,var(--bg-gradient-200)_20%,var(--bg-gradient-300)_30%,] 
-                    lg:bg-(--main-400)">
+                    flex
+                    lg:bg-[url(../../public/solidBg.jpg)]
+                    lg:bg-(--main-200)
+                    lg:bg-blend-multiply
+                    ">
                     <Border2 />
 
                     <h1 className="leading-[1.3] grow-1 font-(family-name:--font-aboreto) text-4xl lg:text-5xl xl:text-6xl flex flex-col pt-10 justify-end lg:justify-center pb-15 items-center px-4 xl:px-16">

@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Davines", 
+        "altText": "Davines Logo", 
+        "imagePath": "/logosForScroll/davines2.png"
+    },
+    {
+        "name": "Kérastase", 
+        "altText": "Kérastase Logo", 
+        "imagePath": "/logosForScroll/kerastase2.png"
+    },
+    {
+        "name": "Loreal", 
+        "altText": "L'Oreal Logo",
+        "imagePath": "/logosForScroll/loreal2.png"
+    },
+    {
+        "name": "Fusiodose",
+        "altText": "Fusio Dose Logo",
+        "imagePath": "/logosForScroll/fusioDose2.png"
+    },
+        {
+        "name": "Davines2", 
+        "altText": "Davines Logo", 
+        "imagePath": "/logosForScroll/davines2.png"
+    },
+    {
+        "name": "Kérastase2", 
+        "altText": "Kérastase Logo", 
+        "imagePath": "/logosForScroll/kerastase2.png"
+    },
+    {
+        "name": "Loreal2", 
+        "altText": "L'Oreal Logo",
+        "imagePath": "/logosForScroll/loreal2.png"
+    },
+    {
+        "name": "Fusiodose2",
+        "altText": "Fusio Dose Logo",
+        "imagePath": "/logosForScroll/fusioDose2.png"
+    }
+]

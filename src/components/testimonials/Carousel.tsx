@@ -149,22 +149,22 @@ export default function Carousel() {
                 {testimonials.map((testimonial) => {
                     return (
                         <div key={testimonial.id}
-                            className="
-                                min-w-full
-                                max-w-[700px]
-                                relative
-                                bg-cover 
-                                bg-no-repeat
-                                flex
-                                p-2
-                                justify-center
-                                items-center
-                                rounded-2xl
-                                overflow-hidden"
                             style={{
                                 backgroundImage: `url(${testimonial.backgroundImage})`,
                                 backgroundPosition: `${testimonial.id === 1 || 4 ? 'top' : 'bottom'}`
-                            }}>
+                            }}
+                            className="
+                            min-w-full
+                            max-w-[700px]
+                            relative
+                            bg-cover
+                            bg-no-repeat
+                            flex
+                            p-2
+                            justify-center
+                            items-center
+                            rounded-2xl
+                            overflow-hidden">
                             <div className="
                                 rounded-md
                                 px-4

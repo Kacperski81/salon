@@ -1,14 +1,10 @@
 "use client"
 
 import { useState, useEffect, useLayoutEffect, useCallback, useRef } from "react";
+import type { CarouselItem } from "@/app/types";
 import LeftArrow from "../svgs/LeftArrow";
 import RightArrow from "../svgs/RightArrow";
-
-export type CarouselItem = {
-    id: string;
-    imageUrl: string;
-    alt: string;
-}
+import PageHeading from "../PageHeading";
 
 type Props = {
     items: CarouselItem[];
@@ -114,18 +110,7 @@ export default function Carousel3({ items }: Props) {
         ">
 
             {/* Heading */}
-            <h2 className="
-                mx-auto           
-                font-(family-name:--font-aboreto) 
-                self-center
-                justify-self-start  
-                px-10
-                pb-1 
-                text-2xl 
-                text-(--main-100) 
-                uppercase
-                tracking-widest">GALLERY
-            </h2>
+            <PageHeading title="gallery" />
 
             {/* Carousel container */}
             <div ref={containerRef} className="min-w-[300px] h-auto mx-auto overflow-clip relative shadow-xl flex ">
@@ -135,8 +120,9 @@ export default function Carousel3({ items }: Props) {
                     {items.map((item) => {
                         return (
                             <img key={item.id} src={item.imageUrl} alt={item.alt} />
-
+                            
                         )
+
                     })}
                 </div>
                 {/* Buttons */}

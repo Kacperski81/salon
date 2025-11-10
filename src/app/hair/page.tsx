@@ -1,11 +1,15 @@
 "use client"
 
 import { Border2 } from "@/components/border";
-import Services from "@/components/hair/services";
-import Treatments from "@/components/hair/treatments";
+import Services from "@/components/hair/Services";
+import Treatments from "@/components/hair/Treatments";
 import Carousel3, { CarouselItem } from "@/components/carousel/Carousel3";
 import Footer from "@/components/footer";
 import Gallery from "@/components/nail/gallery";
+import Gallery4 from "@/components/gallery/Gallery4";
+import background from "../../../public/solidBg.jpg"
+import MobileGallery from "../../components/gallery/MobileGallery";
+import LogoScroller from "@/components/hair/LogoScroller";
 
 const hairImages: CarouselItem[] = [
     { id: "1", imageUrl: './hair-gallery/zd35.jpg', alt: 'Hair Image 35' },
@@ -57,13 +61,20 @@ export default function Hair() {
             <Services />
             <Treatments />
 
-            <div className="hidden sm:block mx-auto w-[90vw] max-w-[1600px]">
-                <Gallery items={hairImages} images={9} />
+            Mobile gallery
+            <div className="xl:hidden">
+                <MobileGallery pictures={hairImages} />
+            </div>
+            <div className="hidden xl:block">
+                <Gallery4 pictures4={hairImages} background={background} />
             </div>
 
-            <div className="sm:hidden pb-4">
-                <Carousel3 items={hairImages} />
+            <div className="motion-reduce:hidden aria-hidden:hidden">
+                <LogoScroller />
             </div>
+
+
+
             <Footer />
         </div>
     )
