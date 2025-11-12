@@ -2,7 +2,7 @@
 
 import PageHeading from "../PageHeading";
 import Section from "../Section";
-import background from "../../../public/nailBg.png";
+import background from "../../../public/solidBg.jpg";
 import type { CarouselItem } from "@/app/types";
 import { useState } from "react";
 // import Carousel3 from "../carousel/Carousel3";
@@ -36,7 +36,7 @@ export default function MobileGallery({ pictures }: { pictures: CarouselItem[] }
     };
 
     return (
-        <Section background={background} bgRepeat={true}>
+        <Section background={background} bgRepeat={false}>
             <div className="px-3 py-2">
 
                 <PageHeading title="GALLERY" />
@@ -55,7 +55,7 @@ export default function MobileGallery({ pictures }: { pictures: CarouselItem[] }
                 {showModal && (
                     <div className="">
                         {/* All you need to do is to find the clicked item from the images in the pictures it has 2 more items so maybe - 2 */}
-                        <LightBox key={selectedItem?.id} open={showModal} onClose={handleCloseModal} item={selectedItem} items={pictures} />
+                        <LightBox key={selectedItem?.id} open={showModal} onClose={handleCloseModal} item={selectedItem} items={pictures} handleOverlayClick={handleOverlayClick} />
                     </div>
                 )}
             </div>

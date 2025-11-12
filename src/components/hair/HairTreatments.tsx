@@ -22,7 +22,7 @@ export default function Treatments() {
             text-center 
             grow-1 
             flex 
-            bg-(--main-100) 
+            bg-(--main-200) 
             bg-[url(../../public/treatmentsBg.jpg)]
             bg-blend-multiply 
             bg-right-top 

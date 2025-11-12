@@ -1,7 +1,7 @@
-export default function PageHeading({ title }: { title: string }) {
+export default function PageHeading({ title, mT, }: { title: string, mT?:string }) {
     return (
-        <h2 className="
-            mt-10
+        <h2 className={`
+            ${mT ? mT : 'mt-10'}
             xl:mt-14 
             font-(family-name:--font-aboreto) 
             self-center 
@@ -11,7 +11,7 @@ export default function PageHeading({ title }: { title: string }) {
             text-2xl 
             text-(--main-100)
             uppercase
-            tracking-widest">
+            tracking-widest`}>
                 {title}
         </h2>
     )

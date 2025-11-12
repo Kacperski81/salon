@@ -375,6 +375,22 @@ body {
     }
 }
 
+
+.testimonial::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--main-100), var(--main-500)) border-box;
+    mask:
+        linear-gradient(black, black) border-box,
+        linear-gradient(black, black) padding-box;
+    mask-composite: subtract;
+}
+
+/* Icons */
 .primary-close {
     fill: var(--main-100);
 }
@@ -397,20 +413,6 @@ body {
     height: 2rem;
 }
 
-.testimonial::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    border-radius: inherit;
-    border: 1px solid transparent;
-    background: linear-gradient(var(--main-100), var(--main-500)) border-box;
-    mask:
-        linear-gradient(black, black) border-box,
-        linear-gradient(black, black) padding-box;
-    mask-composite: subtract;
-}
-
 .icon-star {
     width: 2rem;
     height: 2rem;
@@ -422,6 +424,38 @@ body {
     .secondary-icon-star {
         fill: gold
     }
+}
+
+.primaryAnnouncement {
+    fill: var(--main-50);
+}
+
+.secondaryAnnouncement {
+    fill: none;
+}
+
+.primaryDiscount {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--main-50);
+}
+
+.secondaryDiscount {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--main-400);
+}
+
+.primaryInformation {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--main-50);
+}
+
+.secondaryInformation {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--main-400);
 }
 
 /* GALLERY */
@@ -591,14 +625,24 @@ body {
     width: 80px;
     pointer-events: none;
     z-index: 10;
+
+    @media (min-width: 768px) {
+        width: 100px;
+    } 
+
+    @media (min-width: 1280px) {
+        width: 200px;
+    }
+        
 }
 
 .scroller::before {
     left: 0;
-    background: linear-gradient(to right, var(--body-bg, #fff), transparent);
+    
 }
 
 .scroller::after {
     right: 0;
-    background: linear-gradient(to left, var(--body-bg, #fff), transparent);
+    /* background: linear-gradient(to left, var(--main-400), transparent); */
+
 }

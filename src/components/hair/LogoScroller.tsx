@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Section from "../Section";
 import logoScrollerBg from "../../../public/bg-no-picture.png";
 import { getScrollerLogos } from "@/app/lib/scrollerLogos";
+import PageHeading from "../PageHeading";
 
 
 export default function LogoScroller() {
@@ -32,15 +33,17 @@ export default function LogoScroller() {
     }, [])
 
     return (
-        <Section>
+        // <Section>
+        <section>
+            <PageHeading title="Our Partners" />
 
             {/* Scroller */}
             <div
                 ref={scrollerRef}
                 className="scroller self-start 
-                    mt-20 max-w-[80vw] mx-auto 
-                    overflow-hidden
-                    border"
+                max-w-[80vw] mx-auto 
+                overflow-hidden
+                "
             >
 
                 {/* Inner scroller */}
@@ -51,18 +54,20 @@ export default function LogoScroller() {
                     flex gap-[10px]
                     animate-scroll
                     will-change-transform
-                    *:p-1 *:rounded-lg *:bg-(--main-50)/10 *:w-[200px] md:*:w-[300px] md:*:w-[400px] *:flex-shrink-0 *:flex *:items-center *:justify-center"
+                    *:p-1 *:w-[200px] md:*:w-[300px] md:*:w-[400px] *:flex-shrink-0 *:flex *:items-center *:justify-center"
                 >
                     {/* <img src="/logosForScroll/loreal2.png" alt="L'Oreal-logo" className="w-full" /> */}
                     {scrollerLogos.map((logo) => {
                         return (
-                            <li key={logo.name}>
+                            <li key={logo.name} className="testimonial
+                            backdrop-blur-[2px]
+                            rounded-md p-2 md:p-4 shadow-md hover:shadow-lg transition-shadow w-[150px] md:w-[200px] lg:w-[250px] flex items-center justify-center">
                                 <img src={logo.imagePath} alt={logo.altText} className="w-full h-auto object-contain" />
                             </li>
                         )
                     })}
                 </ul>
             </div>
-        </Section>
+        </section>
     );
 }

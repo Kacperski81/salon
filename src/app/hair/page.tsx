@@ -10,14 +10,19 @@ import Footer from "@/components/footer";
 // import Gallery from "@/components/nail/gallery";
 import Gallery4 from "@/components/gallery/Gallery4";
 import background from "../../../public/solidBg.jpg";
+import bg from "../../../public/solidBg.jpg"
 import MobileGallery from "../../components/gallery/MobileGallery";
 import LogoScroller from "@/components/hair/LogoScroller";
+import Offers from "@/components/hair/Offers";
+import Section from "@/components/Section";
 
 export default function Hair() {
     const hairImages: CarouselItem[] = getHairCarouselImages();
 
     return (
-        <div className="grow flex flex-col bg-(--main-400)">
+        <div
+            className="grow flex flex-col text-center"
+        >
 
             <Border2 />
             <Services />
@@ -33,11 +38,12 @@ export default function Hair() {
                 <Gallery4 pictures4={hairImages} background={background} />
             </div>
 
-            <div className="">
-                <LogoScroller />
-            </div>
+            <section
+                className="min-h-dvh lg:min-h-screen bg-[url('/mainBg.jpg')] bg-cover bg-(--main-200) bg-blend-multiply flex flex-col gap-4">
+                    <LogoScroller />
+                    <Offers />
 
-
+            </section>
 
             <Footer />
         </div>

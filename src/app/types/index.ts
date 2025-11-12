@@ -29,3 +29,10 @@ export type TreatmentsData = {
     description: string;
     price: string;
 }
+
+export type HairOffer = {
+    id: number;
+    title: string;
+    description: string;
+    icon: string;
+}
