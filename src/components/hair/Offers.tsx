@@ -45,7 +45,8 @@ export default function Offers() {
                         className="
                         testimonial
                         backdrop-blur-[2px]
-                        text-(--main-50) 
+                        text-(--main-50)
+                        mb-2 
                         rounded-lg p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
 
                         <div className="flex items-center gap-4">

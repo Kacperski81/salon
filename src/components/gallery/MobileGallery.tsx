@@ -36,7 +36,7 @@ export default function MobileGallery({ pictures }: { pictures: CarouselItem[] }
     };
 
     return (
-        <Section background={background} bgRepeat={false}>
+        <Section background={background} bgRepeat={true}>
             <div className="px-3 py-2">
 
                 <PageHeading title="GALLERY" />
