@@ -1,13 +1,13 @@
 [
     { "id": "1", "imageUrl": "/hair-gallery/zd35.jpg", "alt": "Hair Image 35" },
-    { "id": "2", "imageUrl": "/hair-gallery/zd1.jpg", "alt": "Hair Image 1" },
-    { "id": "3", "imageUrl": "/hair-gallery/zd2.jpg", "alt": "Hair Image 2" },
-    { "id": "4", "imageUrl": "/hair-gallery/zd3.jpg", "alt": "Hair Image 3" },
-    { "id": "5", "imageUrl": "/hair-gallery/zd4.jpg", "alt": "Hair Image 4" },
-    { "id": "6", "imageUrl": "/hair-gallery/zd5.jpg", "alt": "Hair Image 5" },
-    { "id": "7", "imageUrl": "/hair-gallery/zd6.jpg", "alt": "Hair Image 6" },
-    { "id": "8", "imageUrl": "/hair-gallery/zd7.jpg", "alt": "Hair Image 7" },
-    { "id": "9", "imageUrl": "/hair-gallery/zd8.jpg", "alt": "Hair Image 8" },
+    { "id": "2", "imageUrl": "/hair-gallery/gallery2/zd1.jpg", "alt": "Hair Image 1" },
+    { "id": "3", "imageUrl": "/hair-gallery/gallery2/zd2.jpg", "alt": "Hair Image 2" },
+    { "id": "4", "imageUrl": "/hair-gallery/gallery2/zd3.jpg", "alt": "Hair Image 3" },
+    { "id": "5", "imageUrl": "/hair-gallery/gallery2/zd4.jpg", "alt": "Hair Image 4" },
+    { "id": "6", "imageUrl": "/hair-gallery/gallery2/zd5.jpg", "alt": "Hair Image 5" },
+    { "id": "7", "imageUrl": "/hair-gallery/gallery2/zd6.jpg", "alt": "Hair Image 6" },
+    { "id": "8", "imageUrl": "/hair-gallery/gallery2/zd7.jpg", "alt": "Hair Image 7" },
+    { "id": "9", "imageUrl": "/hair-gallery/gallery2/zd8.jpg", "alt": "Hair Image 8" },
     { "id": "10", "imageUrl": "/hair-gallery/zd9.jpg", "alt": "Hair Image 9" },
     { "id": "11", "imageUrl": "/hair-gallery/zd10.jpg", "alt": "Hair Image 10" },
     { "id": "12", "imageUrl": "/hair-gallery/zd11.jpg", "alt": "Hair Image 11" },
@@ -35,5 +35,5 @@
     { "id": "34", "imageUrl": "/hair-gallery/zd33.jpg", "alt": "Hair Image 33" },
     { "id": "35", "imageUrl": "/hair-gallery/zd34.jpg", "alt": "Hair Image 34" },
     { "id": "36", "imageUrl": "/hair-gallery/zd35.jpg", "alt": "Hair Image 35" },
-    { "id": "37", "imageUrl": "/hair-gallery/zd1.jpg", "alt": "Hair Image 1" }
+    { "id": "37", "imageUrl": "/hair-gallery/gallery2/zd1.jpg", "alt": "Hair Image 1" }
 ]

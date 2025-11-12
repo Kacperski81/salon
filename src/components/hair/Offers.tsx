@@ -38,28 +38,7 @@ export default function Offers() {
                             </div>
                         )
                     })}
-
-
-                    {/* Offer Valid */}
-                    <div
-                        className="
-                        testimonial
-                        backdrop-blur-[2px]
-                        text-(--main-50)
-                        mb-2 
-                        rounded-lg p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
-
-                        <div className="flex items-center gap-4">
-                            <div className="p-3 rounded-lg flex-shrink-0">
-                                <IconInformation />
-                            </div>
-                            <div className=" *:text-left">
-                                <h3 className="text-lg md:text-xl font-bold mb-2">Offer Valid</h3>
-                                <p className="font-semibold leading-relaxed mb-1">Tuesday - Friday, 10:00AM - 4:00PM</p>
-                                <p className="text-sm md:text-base leading-relaxed text-(--main-100)">Book your appointment during these hours to take advantage of all our special offers!</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
