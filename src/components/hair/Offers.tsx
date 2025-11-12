@@ -16,7 +16,7 @@ export default function Offers() {
             <div className="space-y-4 md:space-y-6 lg:space-y-8 max-w-5xl mx-auto px-4">
 
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-4">
                     {hairOffers.map((offer) => {
                         const IconComponent = offer.icon === "Announcement" ? IconAnnouncement : IconDiscount;
                         return (
@@ -38,7 +38,7 @@ export default function Offers() {
                             </div>
                         )
                     })}
-                    
+
                 </div>
             </div>
         </div>
