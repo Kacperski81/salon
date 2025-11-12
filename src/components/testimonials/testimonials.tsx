@@ -39,7 +39,7 @@ export default function Testimonials() {
     return (
         <Section>
 
-            <main className="md:grow w-full bg-(--main-400) bg-blend-multiply flex flex-col">
+            <main className="md:grow w-full bg-(--main-400) bg-blend-multiply flex flex-col py-2 xl:py-4 gap-2 md:gap-4">
 
                 <h2 className="
                 mt-10
