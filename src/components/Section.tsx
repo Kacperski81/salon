@@ -13,7 +13,7 @@ export default function Section({children, background, bgRepeat=false}: {childre
             xl:min-h-screen
             text-center 
             grow-1
-            bg-(--main-200)
+            bg-(--main-300)
             bg-blend-multiply
             flex"                    
         >       

@@ -99,20 +99,6 @@ export default function Services() {
     }
 
     return (
-        // <section className="
-        //             snap-start
-        //             min-h-dvh 
-        //             xl:min-h-screen
-        //             text-center 
-        //             grow-1
-        //             flex 
-        //             bg-(--main-300)
-        //             bg-[url(../../public/nailsBgFlowers.jpg)]
-        //             bg-blend-multiply
-        //             bg-center-top
-        //             bg-cover
-        //             bg-no-repeat"
-        //     >
         <Section background={nailsBgFlowers}>
 
             <div className="grow flex lg:pb-7">
@@ -212,17 +198,17 @@ export default function Services() {
                                                             <li
                                                                 key={item.service}
                                                                 className="
-                                                            group 
-                                                            border-b 
-                                                            border-b-(--main-300) 
-                                                            last:border-b-0 
-                                                            p-2
-                                                            text-sm 
-                                                            md:text-base 
-                                                            xl:text-lg 
-                                                                            xl:px-4">
+                                                                    group 
+                                                                    border-b 
+                                                                    border-b-(--main-300) 
+                                                                    last:border-b-0 
+                                                                    p-2
+                                                                    text-sm 
+                                                                    md:text-base 
+                                                                    xl:text-lg 
+                                                                    xl:px-4">
                                                                 <div className="flex justify-between">
-                                                                    <p className="text-(--main-100) lg:text-(--main-200)">{item.service}</p>
+                                                                    <p className="text-(--main-100) lg:text-(--main-50)">{item.service}</p>
                                                                     <p className="self-center text-(--main-50) lg:text-(--main-100)">{item.price}</p>
                                                                 </div>
                                                             </li>

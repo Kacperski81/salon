@@ -52,7 +52,7 @@ export default function Gallery({ items, images }: { items: CarouselItem[], imag
             </div> */}
             </div>
 
-            <LightBox open={lightBoxOpen} item={selectedItem} items={items} onClose={closeLightBox} />
+            {/* <LightBox open={lightBoxOpen} item={selectedItem} items={items} onClose={closeLightBox} /> */}
 
         </section>
     )
