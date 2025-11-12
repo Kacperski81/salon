@@ -39,7 +39,7 @@ export default function Hair() {
             </div>
 
             <section
-                className="min-h-dvh lg:min-h-screen bg-[url('/mainBg.jpg')] bg-cover bg-(--main-200) bg-blend-multiply flex flex-col gap-4">
+                className="bg-[url('/mainBg.jpg')] bg-cover bg-(--main-200) bg-blend-multiply flex flex-col gap-4">
                     <LogoScroller />
                     <Offers />
 
