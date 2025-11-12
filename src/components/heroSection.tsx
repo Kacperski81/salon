@@ -36,7 +36,7 @@ export default function heroSection3() {
 
                     <div className="relative
                     grow
-                    basis-[65vh]
+                    basis-[60vh]
                     md:basis-1/2
                     md:h-screen">
                         <Image
